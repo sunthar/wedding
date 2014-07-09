@@ -6,6 +6,17 @@ body{
   font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
 }
+a{
+  color: @blue;
+  opacity: 0.9;
+  transition: 0.3s;
+
+  &:hover{
+    opacity: 1;
+    color: @blue;
+    text-decoration: none;
+  }
+}
 .navbar-wedding{
   background: white;
   margin-bottom: 0px;
@@ -95,11 +106,21 @@ body{
       height: 350px;
     }
   }
+  .festivities_img{
+    width: 80%;
+    margin: 0 10%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    img{
+      width: 100%;
+    }
+  }
   .box{
     padding: 30px;
     position: relative;
     border:  1px solid @light_grey;
     margin-bottom: 60px;
+    font-size: 22px;
 
     &.half_box{
       padding: 30px 0px;
@@ -117,17 +138,36 @@ body{
     }
     p{
       text-indent:50px;
-      font-size: 22px;
       line-height: 1.5;
       color: #333;
+      &.no_indent{
+        text-indent: 0px;
+      }
     }
-    h3{
-      font-size: 26px;
+    h3,h4{
+      font-size: 32px;
       font-weight: 400;
       text-align: center;
       margin: 0px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       margin-top: 10px;
+
+      &.left_align{
+        text-align: left;
+      }
+
+    }
+    h4{
+      font-size: 26px;
+      color: @purple;
+      text-align: left;
+      font-weight: 300;
+      margin-bottom: 10px;
+      span{
+        padding-left: 10px;
+        margin-left: 10px;
+        border-left: 1px solid @light_grey;
+      }
     }
   }
 }
