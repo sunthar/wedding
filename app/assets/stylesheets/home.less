@@ -1,13 +1,13 @@
 @blue: #414490;
 @purple: #867ca9;
 @grey: #77736c;
+@light_grey: #ccc;
 body{
   font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
 }
 .navbar-wedding{
   background: white;
-  border: none;
   margin-bottom: 0px;
   .navbar-brand{
     color: @purple;
@@ -50,9 +50,11 @@ body{
 }
 .main_content{
   padding-top: 53px;
+  padding-bottom: 100px;
   .jumbotron{
     height: 550px;
     margin-top: 2px;
+    margin-bottom: 0px;
     &.about_us_bg{
       background: url("background-img-1.png") no-repeat center center fixed;
       -webkit-background-size: cover;
@@ -66,6 +68,66 @@ body{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    }
+  }
+  .wedding_date{
+    font-size: 75px;
+    color: @purple;
+    text-align: center;
+    padding: 20px 0px;
+    letter-spacing: 4px;
+  }
+  h2{
+    font-size: 50px;
+    font-weight: 300;
+    line-height: 1.3;
+    margin: 0px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .square_img{
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 15px;
+    padding-top: 15px;
+
+    img{
+      height: 350px;
+    }
+  }
+  .box{
+    padding: 30px;
+    position: relative;
+    border:  1px solid @light_grey;
+    margin-bottom: 60px;
+
+    &.half_box{
+      padding: 30px 0px;
+      border-left: none;
+      border-right: none;
+    }
+    .glyphicon-heart{
+      color: @purple;
+      font-size: 24px;
+      position: absolute;
+      bottom: -12px;
+      top: auto;
+      left: 50%;
+      margin-left: -12px;
+    }
+    p{
+      text-indent:50px;
+      font-size: 22px;
+      line-height: 1.5;
+      color: #333;
+    }
+    h3{
+      font-size: 26px;
+      font-weight: 400;
+      text-align: center;
+      margin: 0px;
+      margin-bottom: 20px;
+      margin-top: 10px;
     }
   }
 }
