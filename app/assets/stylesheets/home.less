@@ -17,9 +17,61 @@ a{
     text-decoration: none;
   }
 }
+.section{
+  margin-bottom: 30px;
+}
+textarea{
+  resize: vertical;
+}
+.btn-default{
+  color: @blue;
+  border-color: @blue;
+  transition: 0.3s;
+
+  &:hover, &:active, &:focus{
+    color: white;
+    background-color: @blue;
+    border-color: @blue;
+  }
+}
+.alert{
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.form-horizontal{
+  .form-group{
+    margin-bottom: 30px;
+  }
+  .control-label{
+    font-size: 21px;
+    font-weight: 300; 
+    line-height: 40px;
+    padding-top: 0px;
+  }
+  .form-control{
+    border-color: #ccc;
+    font-size: 18px;
+    min-height: 40px;
+    box-shadow: none;
+  }
+  .checkbox{
+    label{
+      font-size: 21px;
+      font-weight: 300; 
+      line-height: 24px;
+    }
+    strong{
+      font-weight: 500;
+    }
+  }
+}
+
 .navbar-wedding{
   background: white;
   margin-bottom: 0px;
+  border: none;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.20);
   .navbar-brand{
     color: @purple;
     text-transform: uppercase;
@@ -28,7 +80,10 @@ a{
     margin-right: 20px;
     &:hover{
       color: @purple;
-      background-color: #f9f9f9;
+    }
+    i{
+      font-size: 15px;
+      margin-right: 2px;
     }
   }
   .navbar-nav{
@@ -106,21 +161,25 @@ a{
       height: 350px;
     }
   }
-  .festivities_img{
+  .big_circle_img,.small_circle_img{
     width: 80%;
-    margin: 0 10%;
+    margin: 0 auto;
     overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
     img{
       width: 100%;
     }
+  }
+  .small_circle_img{
+    width: 60%;
   }
   .box{
     padding: 30px;
     position: relative;
     border:  1px solid @light_grey;
     margin-bottom: 60px;
-    font-size: 22px;
+    font-size: 21px;
 
     &.half_box{
       padding: 30px 0px;
@@ -137,11 +196,14 @@ a{
       margin-left: -12px;
     }
     p{
-      text-indent:50px;
+      text-indent:30px;
       line-height: 1.5;
       color: #333;
-      &.no_indent{
+      &.no_indent, &.text-center{
         text-indent: 0px;
+      }
+      .big_font{
+        font-size: 24px;
       }
     }
     h3,h4{
@@ -160,7 +222,6 @@ a{
     h4{
       font-size: 26px;
       color: @purple;
-      text-align: left;
       font-weight: 300;
       margin-bottom: 10px;
       span{
@@ -169,6 +230,11 @@ a{
         border-left: 1px solid @light_grey;
       }
     }
+  }
+  .slideshow_button{
+    display: block;
+    width: 200px;
+    margin: 10px auto;
   }
 }
  
