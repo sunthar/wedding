@@ -15,3 +15,12 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+$( document ).ready(function() {
+  $('.wedding_party_carousel').each(function(){
+      $(this).carousel({
+          interval: false
+      });
+  });
+});
+ 
