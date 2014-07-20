@@ -28,8 +28,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
-gem 'gdata'
-gem 'gdata_spreadsheet'
+gem 'gdata', '1.1.2', :path => "vendor/gems/gdata-1.1.2"
 gem 'nokogiri'
 
 # Use ActiveModel has_secure_password

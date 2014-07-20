@@ -1,3 +1,8 @@
+PATH
+  remote: vendor/gems/gdata-1.1.2
+  specs:
+    gdata (1.1.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -41,8 +46,6 @@ GEM
     execjs (2.2.1)
     font-awesome-less (4.0.2)
       less-rails (>= 2.4.2)
-    gdata (1.1.2)
-    gdata_spreadsheet (0.1.1)
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (2.1.2)
@@ -129,8 +132,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
   font-awesome-less
-  gdata
-  gdata_spreadsheet
+  gdata (= 1.1.2)!
   jbuilder (~> 2.0)
   jquery-rails
   less-rails-bootstrap

@@ -1,7 +1,7 @@
 class Admin::SplashController < AdminController
 
   def index
-
+    @users = User.all
   end
 
   def import
@@ -13,12 +13,27 @@ class Admin::SplashController < AdminController
     file.write response.body
     file.close
     data = CSV.open(file, 'r')
+    int_fields = [12, 13, 15, 16, 17, 18, 19, 20, 21]
     headers = data.shift
 
     data.each do |row|
-
+      u = User.find_by_full_name(row[2].to_s)
+      if u.nil?
+        u = User.create()
+      end
+      user_params = {}
+      row.each_with_index do |val, idx|
+        new_val = val.to_s
+        new_val = val.to_i if int_fields.include?(idx)
+        user_params[headers[idx]] = new_val unless val.blank?
+      end
+      user_params["other_people"] = user_params["other_people"].split(/\s*,\s*/) if user_params["other_people"]
+      if u.access_code.blank?
+        user_params["access_code"] = (0..5).map{ (('A'..'Z').to_a + ('a'..'z').to_a + ('0'..'9').to_a )[rand(62)] }.join
+      end
+      u.update(user_params)
     end
-    render :json => { :users => User.all }
+    render :json => { :users => User.all } and return
   end
 
   def export
