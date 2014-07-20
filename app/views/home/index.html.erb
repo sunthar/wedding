@@ -137,7 +137,7 @@
               </div>
             </div>
             <div class="row">
-              <button class="btn btn-lg btn-default slideshow_button">
+              <button class="btn btn-lg btn-default slideshow_button" data-toggle="modal" data-target="#photo_slideshow">
                 View Slideshow
               </button>
             </div>
@@ -1020,6 +1020,57 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="photo_slideshow" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header clearfix">
+        <a class="close_slideshow" data-dismiss="modal">CLOSE</a>
+      </div>
+      <div class="modal-body">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <%= image_tag("background-img-1.png", :alt => "img 1") %>
+            </div>
+            <div class="item">
+              <%= image_tag("background-img-2.png", :alt => "img 2") %>
+            </div>
+            <div class="item">
+              <%= image_tag("background-img-1.png", :alt => "img 1") %>
+            </div>
+            <div class="item">
+              <%= image_tag("background-img-2.png", :alt => "img 2") %>
+            </div>
+            <div class="item">
+              <%= image_tag("background-img-1.png", :alt => "img 1") %>
+            </div>
+            <div class="item">
+              <%= image_tag("background-img-2.png", :alt => "img 2") %>
+            </div>
+          </div>
+          <!-- Controls -->
+          <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </a>
+          <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
         </div>
       </div>
     </div>
