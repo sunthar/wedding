@@ -17,7 +17,10 @@
       </li>
     -->
       <li class="navbar-actions">
-        <button class="btn btn-success">Import Spreadsheet</button>
+        <a href="" class="btn btn-success" id="import_spreadsheet">Import Spreadsheet</a>
+      </li>
+      <li class="navbar-actions">
+        <a class="btn btn-warning" href="/admin/splash/export" target="_blank">Export Data</a>
       </li>
     </ul>
   </nav>
@@ -167,3 +170,35 @@
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#import_spreadsheet").click(function() {
+      $.ajax({
+        url: '/admin/splash/import',
+        type: 'GET',
+        dataType: 'json',
+        timeout: 15 * 60 * 1000, // 15 minute timeout
+        success: function(data) {
+          console.log(data);
+        },
+        error: function(req, status, error) {
+          console.log({req: req, status: status, error: error});
+        }
+      });
+    });
+    // $("#export_data").click(function() {
+    //   $.ajax({
+    //     url: '/admin/splash/export',
+    //     type: 'GET',
+    //     dataType: 'file',
+    //     timeout: 15 * 60 * 1000, // 15 minute timeout
+    //     success: function(data) {
+    //       console.log(data);
+    //     },
+    //     error: function(req, status, error) {
+    //       console.log({req: req, status: status, error: error});
+    //     }
+    //   });
+    // });
+  });
+</script>
