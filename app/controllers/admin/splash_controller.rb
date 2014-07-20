@@ -43,7 +43,9 @@ class Admin::SplashController < AdminController
     id_to_other_names = {}
     User.all.each do |u|
       field_array = []
-      fields.each{|f| field_array.push(u[f])}
+      fields.each do |f|
+        f == "other_people" ? field_array.push("\"#{u[f].join(", ")}\"") : field_array.push("\"#{u[f]}\"")
+      end
       csv += (field_array.join(",") + "\n")
     end
     send_data(csv, :type => 'text/csv', :disposition => "attachment; filename=#{filename}")
