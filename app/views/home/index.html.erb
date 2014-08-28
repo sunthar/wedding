@@ -74,7 +74,7 @@
                   Johnny is my best friend. He is charming, reliable, funny, and sensitive all in one big, attractive man. He may have his quirks, but that’s what I love most about him.
                 </p>
                 <p>
-                  Johnny and I’s friendship was the perfect starting point for our growing love for each other. As friends, we learned about each other, enjoyed each other’s company, and began to fall in love. Looking back, I can’t imagine it starting any other way. 
+                  Johnny and I’s friendship was the perfect starting point for our growing love for each other. As friends, we learned about each other, enjoyed each other’s company, and began to fall in love. Looking back, I can’t imagine it starting any other way.
                 </p>
                 <p>
                   In life you interact with a lot of different people, but only once in a lifetime do you find someone who is your perfect match. Johnny is perfect for me. He's everything I've always dreamed of and I'm so excited to spend the rest of my life with him!
@@ -968,7 +968,7 @@
           </h2>
           <div class="box clearfix">
             <i class="glyphicon glyphicon-heart"></i>
-            <div class="first_form" style="display: block;">
+            <div class="first_form" style="display: block;" id="rsvp_first">
               <div class="col-md-12">
                 <div class="section">
                   <p>
@@ -977,49 +977,53 @@
                 </div>
               </div>
               <div class="section">
-                <div class="alert alert-danger alert-dismissible" role="alert">
-                  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <div class="alert alert-danger alert-dismissible" role="alert" style="display:none;" id="rsvp_invalid">
+                  <button type="button" class="close" onclick="$('#rsvp_invalid').hide()"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                   <strong>Oh no!</strong> Looks like you didn't enter a valid email address or passcode. If you are having trouble with this page, please contact us at <a href="mailto:sunnysunthar@gmail.com" class="alert-link">sunnysunthar@gmail.com</a>
                 </div>
                 <form class="form-horizontal" role="form">
                   <div class="form-group">
                     <label  class="col-sm-4 control-label">Email Address*</label>
                     <div class="col-sm-8">
-                      <input type="email" class="form-control" placeholder="Email address">
+                      <input type="email" class="form-control" placeholder="Email address" id="rsvp_email">
                     </div>
                   </div>
                   <div class="form-group">
                     <label for="inputPassword3" class="col-sm-4 control-label">Passcode*</label>
                     <div class="col-sm-8">
-                      <input type="password" class="form-control" id="inputPassword3" placeholder="Passcode">
+                      <input type="password" class="form-control" placeholder="Passcode" id="rsvp_passcode">
                     </div>
                   </div>
                   <div class="form-group">
                     <div class="col-sm-offset-4 col-sm-8">
-                      <button type="submit" class="btn btn-default btn-lg">Review RSVP Options</button>
+                      <button type="submit" id="review_rsvp_options" class="btn btn-default btn-lg">Review RSVP Options</button>
                     </div>
                   </div>
                 </form>
               </div>
             </div>
-            <div class="second_form" style="display: block;">
+            <div class="second_form" style="display: none;" id="rsvp_second">
               <div class="col-md-12">
                 <div class="section">
-                  <h4>Hi Sunthar!</h4>
+                  <h4 id="rsvp_hi"></h4>
                   <p>
                     We are excited to celebrate our special day with you. We will keep you posted with all updates via email and text. If you have any questions please feel free to email us at <a href="mailto:sunnysunthar@gmail.com">sunnysunthar@gmail.com</a> or call us at (408 355 4249).
                   </p>
                 </div>
               </div>
               <div class="section">
-                <div class="alert alert-danger alert-dismissible" role="alert">
-                  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <div class="alert alert-danger" role="alert" style="display:none;" id="rsvp_no_rsvp">
+                  <button type="button" class="close" onclick="$('#rsvp_no_rsvp').hide()" ><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                   <strong>Oh no!</strong> Looks like you didn't select any event(s) to RSVP.
+                </div>
+                <div class="alert alert-danger" role="alert" style="display:none;" id="rsvp_all_fields">
+                  <button type="button" class="close" onclick="$('#rsvp_all_fields').hide()" ><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                  <strong>Oh no!</strong> All fields are required except 'Note'.
                 </div>
                 <form class="form-horizontal" role="form">
                   <div class="form-group">
                     <label  class="col-sm-4 control-label">RSVP*</label>
-                    <div class="col-sm-8">
+                    <div class="col-sm-8" id="rsvp_checkboxes">
                       <div class="checkbox">
                         <label>
                           <input type="checkbox"> I am coming for the <strong>Wedding Ceremony</strong>
@@ -1045,48 +1049,48 @@
                   <div class="form-group">
                     <label  class="col-sm-4 control-label">Street Address</label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control">
+                      <input type="text" class="form-control" id="rsvp_address">
                     </div>
                   </div>
                   <div class="form-group">
                     <label  class="col-sm-4 control-label">City</label>
                     <div class="col-sm-4">
-                      <input type="text" class="form-control">
+                      <input type="text" class="form-control" id="rsvp_city">
                     </div>
                   </div>
                   <div class="form-group">
                     <label  class="col-sm-4 control-label">State</label>
                     <div class="col-sm-4">
-                      <input type="text" class="form-control">
+                      <input type="text" class="form-control" id="rsvp_state">
                     </div>
                   </div>
                   <div class="form-group">
                     <label  class="col-sm-4 control-label">Zip Code</label>
                     <div class="col-sm-4">
-                      <input type="text" value = "" pattern="\d*" class="form-control">
+                      <input type="text" value = "" pattern="\d*" class="form-control" id="rsvp_zip">
                     </div>
                   </div>
                   <div class="form-group">
                     <label  class="col-sm-4 control-label">Cell Phone</label>
                     <div class="col-sm-8">
-                      <input type="tel" class="form-control" placeholder="Want text updates?">
+                      <input type="tel" class="form-control" id="rsvp_cell" placeholder="Receive text updates">
                     </div>
                   </div>
                   <div class="form-group">
                     <label  class="col-sm-4 control-label">Note</label>
                     <div class="col-sm-8">
-                      <textarea class="form-control" rows="5" placeholder="Leave us a message!"></textarea>
+                      <textarea class="form-control" id="rsvp_note" rows="5" placeholder="Leave us a message!"></textarea>
                     </div>
                   </div>
                   <div class="form-group">
                     <div class="col-sm-offset-4 col-sm-8">
-                      <button type="submit" class="btn btn-default btn-lg">Submit RSVP!</button>
+                      <button type="submit" class="btn btn-default btn-lg" id="rsvp_submit">Submit RSVP!</button>
                     </div>
                   </div>
                 </form>
               </div>
             </div>
-            <div class="second_form" style="display: block;">
+            <div class="second_form" style="display: none;" id="rsvp_third">
               <div class="col-md-12">
                 <div class="section">
                   <h4>Thanks!</h4>

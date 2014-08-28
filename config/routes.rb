@@ -11,4 +11,9 @@ Rails.application.routes.draw do
     match 'splash/export' => 'splash#export', via: [:get]
   end
 
+  namespace :api do
+    get ':action'
+  end
+
+
 end
