@@ -10,7 +10,7 @@ class ApiController < ApplicationController
       invites = []
       invites.push("ceremony") if u.invited_to_ceremony == 1
       invites.push("reception") if u.invited_to_reception == 1
-      invites.push("ca_reception") if u.invited_to_ca_reception == 1
+      invites.push("careception") if u.invited_to_ca_reception == 1
       people = [u]
       u.other_people.each do |full_name|
         other_u = User.where(:full_name => full_name).first

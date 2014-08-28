@@ -895,9 +895,13 @@
                 </div>
               </div>
               <div class="section">
-                <div class="alert alert-danger alert-dismissible" role="alert" style="display:none;">
-                  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <div class="alert alert-danger" role="alert" style="display:none;" id="rsvp_no_rsvp">
+                  <button type="button" class="close" onclick="$('#rsvp_no_rsvp').hide()" ><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                   <strong>Oh no!</strong> Looks like you didn't select any event(s) to RSVP.
+                </div>
+                <div class="alert alert-danger" role="alert" style="display:none;" id="rsvp_all_fields">
+                  <button type="button" class="close" onclick="$('#rsvp_all_fields').hide()" ><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                  <strong>Oh no!</strong> All fields are required except 'Note'.
                 </div>
                 <form class="form-horizontal" role="form">
                   <div class="form-group">
@@ -952,7 +956,7 @@
                   <div class="form-group">
                     <label  class="col-sm-4 control-label">Cell Phone</label>
                     <div class="col-sm-8">
-                      <input type="tel" class="form-control" id="rsvp_cell" placeholder="Want text updates?">
+                      <input type="tel" class="form-control" id="rsvp_cell" placeholder="Receive text updates">
                     </div>
                   </div>
                   <div class="form-group">
@@ -985,7 +989,7 @@
   <div class="tab-pane" id="registry">
     <div class="jumbotron has_video clearfix">
       <video autoplay loop muted poster="assets/background-img-1.png">
-        <source src="assets/about_us.webm" 
+        <source src="assets/about_us.webm"
                 type='video/webm;codecs="vp8, vorbis"'/>
         <source src="assets/about_us.mp4"
                 type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'/>
