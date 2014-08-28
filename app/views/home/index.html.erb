@@ -105,34 +105,51 @@
             <div class="row">
               <div class="col-md-4">
                 <div class="square_img">
-                  <%= image_tag("background-img-1.png", :alt => "img 1") %>
+                  <%= image_tag("slideshow/slideshow1.jpg", :alt => "img 1") %>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="square_img">
-                  <%= image_tag("background-img-2.png", :alt => "img 1") %>
+                  <%= image_tag("slideshow/slideshow2.jpg", :alt => "img 1") %>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="square_img">
-                  <%= image_tag("background-img-1.png", :alt => "img 1") %>
+                  <%= image_tag("slideshow/slideshow3.jpg", :alt => "img 1") %>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-md-4">
                 <div class="square_img">
-                  <%= image_tag("background-img-2.png", :alt => "img 1") %>
+                  <%= image_tag("slideshow/slideshow4.jpg", :alt => "img 1") %>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="square_img">
-                  <%= image_tag("background-img-1.png", :alt => "img 1") %>
+                  <%= image_tag("slideshow/slideshow15.jpg", :alt => "img 1") %>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="square_img">
-                  <%= image_tag("background-img-2.png", :alt => "img 1") %>
+                  <%= image_tag("slideshow/slideshow6.jpg", :alt => "img 1") %>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="square_img">
+                  <%= image_tag("slideshow/slideshow7.jpg", :alt => "img 1") %>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="square_img">
+                  <%= image_tag("slideshow/slideshow8.jpg", :alt => "img 1") %>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="square_img">
+                  <%= image_tag("slideshow/slideshow9.jpg", :alt => "img 1") %>
                 </div>
               </div>
             </div>
@@ -158,7 +175,7 @@
     </div>
   </div>
   <div class="tab-pane" id="festivities">
-    <div class="jumbotron festivities">
+    <div class="jumbotron festivities_bg">
     </div>
     <div class="container">
       <div class="row">
@@ -233,7 +250,7 @@
     </div>
   </div>
   <div class="tab-pane" id="wedding_party">
-    <div class="jumbotron about_us_bg">
+    <div class="jumbotron wedding_party_bg">
     </div>
     <div class="container">
       <div class="row">
@@ -251,13 +268,55 @@
           <div class="box clearfix">
             <i class="glyphicon glyphicon-heart"></i>
             <div id="bridesmaids_carousel" class="carousel slide wedding_party_carousel" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#bridesmaids_carousel" data-slide-to="0" class="active">
+                  <div class="img-circle small_circle_img">
+                    <%= image_tag("wedding_party_puja.png", :alt => "Puja Chandler") %>
+                  </div>
+                </li>
+                <li data-target="#bridesmaids_carousel" data-slide-to="1">
+                  <div class="img-circle small_circle_img">
+                    <%= image_tag("wedding_party_indu.png", :alt => "Indu Premakumar") %>
+                  </div>
+                </li>
+                <li data-target="#bridesmaids_carousel" data-slide-to="2">
+                  <div class="img-circle small_circle_img">
+                    <%= image_tag("wedding_party_bethany.png", :alt => "Bethany Jenner") %>
+                  </div>
+                </li>
+                <li data-target="#bridesmaids_carousel" data-slide-to="3">
+                  <div class="img-circle small_circle_img">
+                    <%= image_tag("wedding_party_sanjana.png", :alt => "Sanjana Seelam") %>
+                  </div>
+                </li>
+                <li data-target="#bridesmaids_carousel" data-slide-to="4">
+                  <div class="img-circle small_circle_img">
+                    <%= image_tag("wedding_party_arhana.png", :alt => "Arhana Chattopadhyay") %>
+                  </div>
+                </li>
+                <li data-target="#bridesmaids_carousel" data-slide-to="5">
+                  <div class="img-circle small_circle_img">
+                    <%= image_tag("wedding_party_anita.png", :alt => "Anita Shetty") %>
+                  </div>
+                </li>
+                <li data-target="#bridesmaids_carousel" data-slide-to="6">
+                  <div class="img-circle small_circle_img">
+                    <%= image_tag("wedding_party_kelly.png", :alt => "Kelly Bosco") %>
+                  </div>
+                </li>
+                <li data-target="#bridesmaids_carousel" data-slide-to="7">
+                  <div class="img-circle small_circle_img">
+                    <%= image_tag("wedding_party_nisha.png", :alt => "Nisha Prasad") %>
+                  </div>
+                </li>
+              </ol>
               <div class="carousel-inner">
                 <div class="item active">
                   <div class="row">
                     <div class="col-md-4">
                       <div class="section">
                         <div class="img-circle big_circle_img">
-                          <%= image_tag("festivities_img-2.png", :alt => "img 2") %>
+                          <%= image_tag("wedding_party_puja.png", :alt => "Puja Chandler") %>
                         </div>
                       </div>
                     </div>
@@ -279,7 +338,7 @@
                     <div class="col-md-4">
                       <div class="section">
                         <div class="img-circle big_circle_img">
-                          <%= image_tag("festivities_img-1.png", :alt => "img 2") %>
+                          <%= image_tag("wedding_party_indu.png", :alt => "Indu Premakumar") %>
                         </div>
                       </div>
                     </div>
@@ -291,7 +350,10 @@
                         The Bubbly one
                       </h4>
                       <p class="no_indent">
-                        I am so honored that Anita agreed to be my Maid of Honor. Even though we are sisters, we’ve also always been best friends. Anita is not only reliable, caring, and funny, but she is also one of the strongest, most loving people I know. She has been a major influence in my life and I’ve always looked up to her. I can’t wait for her to stand by my side!
+                        Ten minutes into our hike at Temescal Canyon, I am panting, scrambling through steep rocky terrain, trying to keep up with Arhana and Preeth, impressed at how athletic these girls were. I ask Preeth “what do you like to do for fun?” hoping she would do all the talking and I all the panting. “I hike” she says, smiling her beautiful smile at me. As with any group of girls, the conversation quickly turns to “What do you look for in your ideal guy”. Preeth said  “Tall, Kind, Ambitious, a Leader, Someone who knows what he wants, just a Good Person, you know?” As she elaborated on those criteria, I remember having a light-bulb moment,  thinking how her description sounded a LOT like my brother. The more I learned about Preeth during that hike, the more I liked her. After giggling and swapping life stories, by the end of the dust covered trail, I bashfully asked for her number, hoping we could become friends. A year and a half later, I am thrilled to welcome her into our family.
+                      </p>
+                      <p class="no_indent">
+                        Since the day I was born, my big brother has been my everything: my moral compass, my partner-in-crime, my cheerleader, my mentor and most of all my friend. I feel truly lucky to have such an amazing role model in my life, and he will always be my Hero. Growing up I always wondered if any girl was going to match up to him, be deserving of “all that awesomeness” I would say half-jokingly. Preeth is the girl we have all been waiting for, the perfect heroine for this hero, and I feel honored to call her my new sister. Their love for one another is truly breathtaking to witness. Congratulations and cheers to many more adventures ahead!
                       </p>
                     </div>
                   </div>
@@ -301,7 +363,29 @@
                     <div class="col-md-4">
                       <div class="section">
                         <div class="img-circle big_circle_img">
-                          <%= image_tag("festivities_img-2.png", :alt => "img 2") %>
+                          <%= image_tag("wedding_party_bethany.png", :alt => "Bethany Jenner") %>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-8">
+                      <h3 class="left_align">
+                        Bethany Jenner
+                      </h3>
+                      <h4 class="left_align">
+                        The Studious one
+                      </h4>
+                      <p class="no_indent">
+                        Preeth and I became best friends at 7 years old when we were put in the same second grade class. Over the past twenty years we have had shared all our secrets, giggled about crushes, encouraged each other’s over-achieving tendencies, laughed, cried, and really grown up together in so many ways. When I married my husband four years ago I knew that I had to have Preeth by my side. Even though she was pursuing her Master’s at London School of Economics, she said she wouldn’t miss my wedding for the world and celebrated with me, although maybe a little jet-lagged, on the best day of my life. When she moved to India we’d write long emails or catch each other on Skype, knowing that no matter where we were in the world we’d always be there for each other. When she moved on to LA I wasn’t far behind her in moving to Oceanside and we’ve been able to spend a lot of time together figuring out how to become Californians.  When she told me that Sunthar was the one- we were driving through LA- I wanted to cry because I was so happy and excited for her. Sunthar and Preeth are beautiful people inside and out and I couldn’t imagine someone more worthy for my best friend. I can’t wait for the amazing day that will be their wedding!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="section">
+                        <div class="img-circle big_circle_img">
+                          <%= image_tag("wedding_party_sanjana.png", :alt => "Sanjana Seelam") %>
                         </div>
                       </div>
                     </div>
@@ -313,29 +397,13 @@
                         The Witty one
                       </h4>
                       <p class="no_indent">
-                        I am so honored that Anita agreed to be my Maid of Honor. Even though we are sisters, we’ve also always been best friends. Anita is not only reliable, caring, and funny, but she is also one of the strongest, most loving people I know. She has been a major influence in my life and I’ve always looked up to her. I can’t wait for her to stand by my side!
+                        When a person has been in your life for as long as Preeth has been in mine, I'm not sure how it's fair let alone possible to isolate just one memory to call a favorite. So I won't.
                       </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="row">
-                    <div class="col-md-4">
-                      <div class="section">
-                        <div class="img-circle big_circle_img">
-                          <%= image_tag("festivities_img-1.png", :alt => "img 2") %>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-8">
-                      <h3 class="left_align">
-                        Indu Premakumar
-                      </h3>
-                      <h4 class="left_align">
-                        The Bubbly one
-                      </h4>
                       <p class="no_indent">
-                        I am so honored that Anita agreed to be my Maid of Honor. Even though we are sisters, we’ve also always been best friends. Anita is not only reliable, caring, and funny, but she is also one of the strongest, most loving people I know. She has been a major influence in my life and I’ve always looked up to her. I can’t wait for her to stand by my side!
+                        Though we started our friendship at the same high school, it's oddly fair to categorize our it under the umbrella of "long-distance." Preeth and I had very few of the same classes during which to gossip (aka a teenage girl's life source), so we resorted to passing notes in the hallways. One such note of hers was 18 pages long, not including a page addendum of labeled illustrations that shined a light on what I concluded was her (strangely apt) alter ego: a small, chubby boy in a multi-colored propeller hat and an ill-fitting shirt that read "I Heart Cookies." That's the moment I knew Preeth was truly...special. Ever since then, our relationship has gone the distance; whether it was via phone calls between neighboring states during college or via emails from continents apart during her stints in both London and India, we've managed to stay close. Now, we text each other from our respective bedrooms, so it's all come full circle.
+                      </p>
+                      <p class="no_indent">
+                        As part of our rather unique 13-year long-distance friendship, Preeth has never failed to be my moral compass. Admittedly, I have occasional trouble deciding between what I want and the proverbial "right" thing, but Preeth has always been there, unflinchingly, to re-calibrate and point me due north...and I can't thank her enough. While I'm sad (read: miserable) at the prospect of losing my roommate to 400 miles and a boy (Cooties!), I'm thrilled that she's found someone who will love, appreciate and most importantly, embrace all of her quirks, quick wit and beauty. Congratulations Preeth and Sunthar - you're a couple who overcame the distance, a feat that's nothing short of admirable (though I’ve trained Preeth well!). And Preef, now that we're going to physically be long-distance pals again, I expect an extensive note about married life soon, white picket fence artwork included.
                       </p>
                     </div>
                   </div>
@@ -345,19 +413,22 @@
                     <div class="col-md-4">
                       <div class="section">
                         <div class="img-circle big_circle_img">
-                          <%= image_tag("festivities_img-2.png", :alt => "img 2") %>
+                          <%= image_tag("wedding_party_arhana.png", :alt => "Arhana") %>
                         </div>
                       </div>
                     </div>
                     <div class="col-md-8">
                       <h3 class="left_align">
-                        Sanjana Seelam
+                        Arhana Chattopadhyay
                       </h3>
                       <h4 class="left_align">
                         The Witty one
                       </h4>
                       <p class="no_indent">
-                        I am so honored that Anita agreed to be my Maid of Honor. Even though we are sisters, we’ve also always been best friends. Anita is not only reliable, caring, and funny, but she is also one of the strongest, most loving people I know. She has been a major influence in my life and I’ve always looked up to her. I can’t wait for her to stand by my side!
+                        It was an office romance of sorts. Preeth and I met while we were both working hard at an environmental think tank in Delhi (well, she was working hard…I was hardly working). At first, I was just grateful to have someone show me around the city and help me finally get internet, but soon it became clear that this was a friendship meant to be. We shared, among other things, a mutual love for Maharajah burgers at McDonald's, a mutual hatred for autowallahs who rip you off, many shared moments of confusion about navigating the growing pains of your 20s (and in India, no less!), and above all, the same zany sense of humor that you only find in a handful of people in your lifetime.  We became inseparable and took to calling each other "roommates" (which, in retrospect, may have annoyed our actual roommates at the time).    
+                      </p>
+                      <p class="no_indent">
+                        What was even more amazing was that even after coming back to America, Preeth and I remained so present in each other's lives, especially after she moved to California. Preeth has helped me furnish my apartment, figure out my life over many a late-night phone call, kept me sane through the first part of medical school, and kept me laughing even when the going got rough. She is the (slightly) taller, wiser, older sister that I never had and one of the most genuinely good human beings I've ever met.  I always knew that someone like Sunthar was going to come into her life, and I'm so, so happy that they have found each other.
                       </p>
                     </div>
                   </div>
@@ -367,19 +438,28 @@
                     <div class="col-md-4">
                       <div class="section">
                         <div class="img-circle big_circle_img">
-                          <%= image_tag("festivities_img-1.png", :alt => "img 2") %>
+                          <%= image_tag("wedding_party_anita.png", :alt => "Anita Shetty") %>
                         </div>
                       </div>
                     </div>
                     <div class="col-md-8">
                       <h3 class="left_align">
-                        Indu Premakumar
+                        Anita Shetty
                       </h3>
                       <h4 class="left_align">
-                        The Bubbly one
+                        The Short one
                       </h4>
                       <p class="no_indent">
-                        I am so honored that Anita agreed to be my Maid of Honor. Even though we are sisters, we’ve also always been best friends. Anita is not only reliable, caring, and funny, but she is also one of the strongest, most loving people I know. She has been a major influence in my life and I’ve always looked up to her. I can’t wait for her to stand by my side!
+                        Preeth and I were best friends at first sight. We met at a bowling alley in grade school and have talked on the phone almost every night since then. Preeth not only knows everything about me, but she has been there for me every step of the way. I remember the day I got my first job to start my career; she had to be the first one I told. She happened to be in London at the time so I made her video chat with me. I told her to start jumping up and down and of course she did immediately - she is the best cheerleader. After she jumped up and down, I told her my good news and she continued to jump up and down for me in excitement. That's how amazing she is.   
+                      </p>
+                      <p class="no_indent">
+                        And then came the next chapter, the part where I'd jump up and down for her. I had heard so much about Sunthar before I met him and he sounded great, but of course he still had to pass my test. Sunthar was nothing short of what Preeth had described and he passed with flying colors!
+                      </p>
+                      <p class="no_indent">
+                        Congratulations to Sunthar and my best friend, Preeth! You are perfect for each other.  I am so blessed to not only be a part of this journey, but to have another cheerleader on Team Preeth!
+                      </p>
+                      <p class="no_indent">
+                        Sunthar, welcome to the family! I love you guys!
                       </p>
                     </div>
                   </div>
@@ -389,61 +469,59 @@
                     <div class="col-md-4">
                       <div class="section">
                         <div class="img-circle big_circle_img">
-                          <%= image_tag("festivities_img-2.png", :alt => "img 2") %>
+                          <%= image_tag("wedding_party_kelly.png", :alt => "Kelly Bosco") %>
                         </div>
                       </div>
                     </div>
                     <div class="col-md-8">
                       <h3 class="left_align">
-                        Sanjana Seelam
+                        Kelly Bosco
                       </h3>
                       <h4 class="left_align">
-                        The Witty one
+                        The Nerdy one
                       </h4>
                       <p class="no_indent">
-                        I am so honored that Anita agreed to be my Maid of Honor. Even though we are sisters, we’ve also always been best friends. Anita is not only reliable, caring, and funny, but she is also one of the strongest, most loving people I know. She has been a major influence in my life and I’ve always looked up to her. I can’t wait for her to stand by my side!
+                        Preeth and I first met sometime in elementary school, and grew to be close friends during junior high and high school. Preeth is someone I always referred to as my “Music Guru” and/or “The Coolest Person You Will Ever Meet.” Many of my Saturday nights in high school were spent with Preeth at [pick your chain restaurant in Chandler that serves cheap ice cream], talking for hours. Thinking back to memories of Preeth in high school, I remember laughing until I cried... pretty much anytime I hung out with her. I can’t bring up stealing bread, Mr. T, or “Don’t Cha” by the Pussycat Dolls without giggling. Preeth is the girl that is brilliant, beautiful, kind, and wickedly clever, all without knowing how fantastic she is. I give Preeth credit for giving me a special kind of musical education. Because of Preeth’s many CDs she made (back when mix CDs were still a thing), I am constantly reminded of her whenever I hear a mid-2000’s indie rock song (Thanks, Peach!) We were both finally able to see one of our favorite bands, The Shins, on a turn-around trip to Tucson for her birthday a couple of years ago. We waited almost 10 years to see them, and I couldn’t imagine experiencing that with anyone else!
+                      </p>
+                      <p class="no_indent">
+                        Preeth and I moved to the opposite ends of the state for college, and fortunately for Gmail, we were still able to keep in touch with our day-to-day events, hopes, fears, etc. throughout our undergrad, and eventually when she moved across the world. She showed me around downtown Tucson and I was delighted to have her visit me in the mountains in Flagstaff. She is a wonderful friend, confidant, comedian, and model (but seriously, how beautiful is this girl?)
+                      </p>
+                      <p class="no_indent">
+                        When Preeth was coordinating for all of our girlfriends to meet Sunthar last year in Chandler, I had an amazing feeling about this guy, even before I met him. He is kind, smart, funny, and most importantly, he would do anything for Preeth. I am so honored to know this gentleman that stole Preeth’s heart. I can’t wait to celebrate the marriage of Preeth and Sunthar and their life together!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="section">
+                        <div class="img-circle big_circle_img">
+                          <%= image_tag("wedding_party_nisha.png", :alt => "Nisha Prasad") %>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-8">
+                      <h3 class="left_align">
+                        Nisha Prasad
+                      </h3>
+                      <h4 class="left_align">
+                        The Local one
+                      </h4>
+                      <p class="no_indent">
+                        I personally cannot attest to when Preeth and I first met because I have known her my entire life. So much so that we used to say we’ve known each other “since the womb”. Preeth’s family and mine are basically one as our dads are best friends who can always be found on the golf course; our moms are best friends who go for endless walks around the block, drink wine, and gossip; our sisters are best friends and have done everything from getting married to having kids at the exact same time. I can definitely say Preeth has been one of my best friends and another sister for as long as I can remember.
+                      </p>
+                      <p class="no_indent">
+                        The fondest memory I have of our childhood friendship is premiering our dance skills to the famous Tamil song ‘Muquabala’ at the tender age of 5 and 7 (possibly older but that’s embarrassing!) and then extending that to a full-on dance career with our dear friends Anita and Neeta…shout out “East Coast, feel me, West Coast, feel me!” 
+                      </p>
+                      <p class="no_indent">
+                        Like most kids, we both went our separate ways after high school and it wasn’t until a year ago when Preeth was visiting Sunthar that we reconnected. It was like old times. We met for brunch in San Francisco for the purpose of ‘meeting this guy she was kinda serious about’ but of course Sunthar was forced to be silent as Preeth and I caught up on 10+ years of distance. After that fateful day, I got the privilege of getting to know Sunthar as he tried to get me out of my ‘new to SF funk’ by introducing me to all of his awesome friends, and through that we have become such great friends too. I am so happy that Sunthar and Preeth have found each other because they are both such amazing people. I look forward to watching this relationship blossom and to finally live in the same place as Preeth once again so we can go on long walks, drink wine, and gossip together for years to come!  
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
-              <ol class="carousel-indicators">
-                <li data-target="#bridesmaids_carousel" data-slide-to="0" class="active">
-                  <div class="img-circle small_circle_img">
-                    <%= image_tag("festivities_img-2.png", :alt => "img 2") %>
-                  </div>
-                </li>
-                <li data-target="#bridesmaids_carousel" data-slide-to="1">
-                  <div class="img-circle small_circle_img">
-                    <%= image_tag("festivities_img-1.png", :alt => "img 2") %>
-                  </div>
-                </li>
-                <li data-target="#bridesmaids_carousel" data-slide-to="2">
-                  <div class="img-circle small_circle_img">
-                    <%= image_tag("festivities_img-2.png", :alt => "img 2") %>
-                  </div>
-                </li>
-                <li data-target="#bridesmaids_carousel" data-slide-to="3">
-                  <div class="img-circle small_circle_img">
-                    <%= image_tag("festivities_img-1.png", :alt => "img 2") %>
-                  </div>
-                </li>
-                <li data-target="#bridesmaids_carousel" data-slide-to="4">
-                  <div class="img-circle small_circle_img">
-                    <%= image_tag("festivities_img-2.png", :alt => "img 2") %>
-                  </div>
-                </li>
-                <li data-target="#bridesmaids_carousel" data-slide-to="5">
-                  <div class="img-circle small_circle_img">
-                    <%= image_tag("festivities_img-1.png", :alt => "img 2") %>
-                  </div>
-                </li>
-                <li data-target="#bridesmaids_carousel" data-slide-to="6">
-                  <div class="img-circle small_circle_img">
-                    <%= image_tag("festivities_img-2.png", :alt => "img 2") %>
-                  </div>
-                </li>
-              </ol>
+              
             </div>
           </div>
         </div>
@@ -456,13 +534,55 @@
           <div class="box clearfix">
             <i class="glyphicon glyphicon-heart"></i>
             <div id="groomsmen_carousel" class="carousel slide wedding_party_carousel" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#groomsmen_carousel" data-slide-to="0" class="active">
+                  <div class="img-circle small_circle_img">
+                    <%= image_tag("wedding_party_conal.png", :alt => "Conal Sathi") %>
+                  </div>
+                </li>
+                <li data-target="#groomsmen_carousel" data-slide-to="1">
+                  <div class="img-circle small_circle_img">
+                    <%= image_tag("wedding_party_prasanna.png", :alt => "Prasanna Vasudevan") %>
+                  </div>
+                </li>
+                <li data-target="#groomsmen_carousel" data-slide-to="2">
+                  <div class="img-circle small_circle_img">
+                    <%= image_tag("wedding_party_david.png", :alt => "David Tilley") %>
+                  </div>
+                </li>
+                <li data-target="#groomsmen_carousel" data-slide-to="3">
+                  <div class="img-circle small_circle_img">
+                    <%= image_tag("wedding_party_zach.png", :alt => "Zach Wyzgoski") %>
+                  </div>
+                </li>
+                <li data-target="#groomsmen_carousel" data-slide-to="4">
+                  <div class="img-circle small_circle_img">
+                    <%= image_tag("wedding_party_vivek.png", :alt => "Vivek Agrawal") %>
+                  </div>
+                </li>
+                <li data-target="#groomsmen_carousel" data-slide-to="5">
+                  <div class="img-circle small_circle_img">
+                    <%= image_tag("wedding_party_hirav.png", :alt => "Hirav Gandhi") %>
+                  </div>
+                </li>
+                <li data-target="#groomsmen_carousel" data-slide-to="6">
+                  <div class="img-circle small_circle_img">
+                    <%= image_tag("wedding_party_luke.png", :alt => "Luke Li") %>
+                  </div>
+                </li>
+                <li data-target="#groomsmen_carousel" data-slide-to="7">
+                  <div class="img-circle small_circle_img">
+                    <%= image_tag("wedding_party_nick.png", :alt => "Nick Chandler") %>
+                  </div>
+                </li>
+              </ol>
               <div class="carousel-inner">
                 <div class="item active">
                   <div class="row">
                     <div class="col-md-4">
                       <div class="section">
                         <div class="img-circle big_circle_img">
-                          <%= image_tag("festivities_img-2.png", :alt => "img 2") %>
+                          <%= image_tag("wedding_party_conal.png", :alt => "Conal Sathi") %>
                         </div>
                       </div>
                     </div>
@@ -474,7 +594,16 @@
                         The Best Man
                       </h4>
                       <p class="no_indent">
-                        Tommy is an awesome friend and brother. I have such great memories of growing up with Tommy and our relationship continues to grow. We always make the most of the time we have together and I know that he’ll continue to be there for me the rest of my life.
+                        Roommates, frat brothers, classmates, and a cappella mates, needless to say, Sunthar and I are like brothers.  I remember first meeting him during my orientation week in college.  We had instantly hit it off, our chat lasting a few hours even though we had only just met.  I'm so glad I bumped into him that day.  Otherwise, I'm not sure I'd have a partner into crime today.  
+                      </p>
+                      <p class="no_indent">
+                        We have had so many great memories together from celebrating his birthday in NY (he was quite startled to see me at his east coast apartment) to dressing up like super heroes at an Indian restaurant (though he forced me to enter the restaurant first) to singing in a Chennai train (we turned one tamil phrase into a 5 minute song) to traveling all over Sri Lanka together.
+                      </p>
+                      <p class="no_indent">
+                        I'm not sure how Sunthar has put up with me and all my shenanigans over these years, but the fact that he has still stuck by me is a testament to how patient and compassionate he is.  He has taught me so much like never settling for mediocrity but always reach for the stars.
+                      </p>
+                      <p class="no_indent">
+                        I'm glad he has found such a great woman in his life.  I knew Preeth was a perfect match when she showed up to our birthday lunch dressed up as Batwoman. Congrats to Sunthar and Preeth!
                       </p>
                     </div>
                   </div>
@@ -484,7 +613,7 @@
                     <div class="col-md-4">
                       <div class="section">
                         <div class="img-circle big_circle_img">
-                          <%= image_tag("festivities_img-1.png", :alt => "img 2") %>
+                          <%= image_tag("wedding_party_prasanna.png", :alt => "Prasanna Vasudevan") %>
                         </div>
                       </div>
                     </div>
@@ -496,7 +625,16 @@
                         The Radiohead
                       </h4>
                       <p class="no_indent">
-                        Tommy is an awesome friend and brother. I have such great memories of growing up with Tommy and our relationship continues to grow. We always make the most of the time we have together and I know that he’ll continue to be there for me the rest of my life.
+                        I met Sunthar when we joined Raagapella in 2005. I’ve been lucky to enjoy his friendship and share a ton of wonderful and wacky memories with him since then. One such memory: towards the end of our first year in Raag, the Indian musical genius A.R. Rahman was visiting Stanford, and Sunthar and I volunteered for the critical mission of picking up food for a luncheon. Borrowing a Raag member’s friend’s car, we drove to the restaurant and delicately laid the trays of delicious liquidy curry on the floor and seats of the car. The restaurant was late with the order, so we drove back in a rush. A block away from the destination on campus, a car in front of us slammed on the brakes. Sunthar abruptly swerved to the right, hopped over the curb, and stopped just short of a tree. We were okay, but the car was not; the food spilled everywhere, adorning the seats and floor with turmeric and an intense curry aroma that the mightiest cleaning could not remove.
+                      </p>
+                      <p class="no_indent">
+                        This story is notable for three reasons: first, it involves A.R. Rahman (who did eventually get his food). Second, despite us ruining his car and condemning it to be used as an Indian food delivery vehicle, the owner of the car forgave Sunthar (I think), which is a testament to Sunthar being an upstanding and cool guy.
+                      </p>
+                      <p class="no_indent">
+                        And third, this is one of the few times i can remember Sunthar messing anything up, and this wasn’t even quite his fault (although, I probably should have been driving). Sunthar has always sought big challenges and goals, and meticulously constructed plans and led the charge to achieve them. I’ve learned this about him through Raag projects he’s led - including a South Park parody flash video, an epic two week India tour, and a Bollywood-caliber music video - and through many honest and caring conversations over the years.
+                      </p>
+                      <p class="no_indent">
+                        Perhaps the biggest goal Sunthar has talked about is finding a life partner. Since I’ve known him, he's made it clear he wants to find the most beautiful, intelligent, caring, and supportive girl. Seeing how happy, calm, and satisfied he’s been since meeting Preeth, I know that Sunthar found all he wanted and then some. I couldn’t be happier for you, Sunthar! I wish you and Preeth an amazing life together, with ever bigger and more exciting dreams.
                       </p>
                     </div>
                   </div>
@@ -506,7 +644,7 @@
                     <div class="col-md-4">
                       <div class="section">
                         <div class="img-circle big_circle_img">
-                          <%= image_tag("festivities_img-2.png", :alt => "img 2") %>
+                          <%= image_tag("wedding_party_david.png", :alt => "David Tilley") %>
                         </div>
                       </div>
                     </div>
@@ -518,7 +656,13 @@
                         The Jester
                       </h4>
                       <p class="no_indent">
-                        Tommy is an awesome friend and brother. I have such great memories of growing up with Tommy and our relationship continues to grow. We always make the most of the time we have together and I know that he’ll continue to be there for me the rest of my life.
+                        I met sunthar a summer of 2013 when he started working at Piazza. We’re both designers with a sense of humor and immediately hit it off. At work we enjoy walks to coffee shops together, teaching the office pup new tricks, and coming up with fun events for the team. Outside of the office they enjoy fine dining, shooting photos, and visiting Disneyland together. 
+                      </p>
+                      <p class="no_indent">
+                        One of their most fun memories was making Sunthar’s engagement video for Preeth. We ran all around around Palo Alto with a dance crew and used our creative juices to make a fun Indian-infused remix to “Just the Way You Are”. We bonded over the details and were very proud of the outcome. (Without me, I’m not sure she would have said yes, so, you’re welcome) 
+                      </p>
+                      <p class="no_indent">
+                        I have been married for 3 years and gives Sunthar tips about marriage regardless if he wants them or not. He is excited and honored to be standing up for him and his beautiful bride Preeth.
                       </p>
                     </div>
                   </div>
@@ -528,7 +672,7 @@
                     <div class="col-md-4">
                       <div class="section">
                         <div class="img-circle big_circle_img">
-                          <%= image_tag("festivities_img-1.png", :alt => "img 2") %>
+                          <%= image_tag("wedding_party_zach.png", :alt => "Zach Wyzgoski") %>
                         </div>
                       </div>
                     </div>
@@ -550,7 +694,7 @@
                     <div class="col-md-4">
                       <div class="section">
                         <div class="img-circle big_circle_img">
-                          <%= image_tag("festivities_img-2.png", :alt => "img 2") %>
+                          <%= image_tag("wedding_party_vivek.png", :alt => "Vivek Agrawal") %>
                         </div>
                       </div>
                     </div>
@@ -562,7 +706,13 @@
                         The Entreprenerd
                       </h4>
                       <p class="no_indent">
-                        Sunthar once suckered me into a trip from San Francisco all the way to New York City in 2007.  I asked him why of all places, NYC, and of all people, me?  His reason: A "bromantic" getaway. What followed over the next week in NYC was the adventure of a lifetime.  We saw a Broadway production of The Lion King, rode around the city in a horse-driven carriage, and even experienced a classic over-priced cocktail at the Gansevoort.  But this was also followed by endless days and nights talking about our dreams, learning what scares of each of us, and even just hanging out together in silence, which I always count as a testament to true friendship.
+                        Sunthar once suckered me into a trip from San Francisco all the way to New York City in 2007.  I asked him why of all places, NYC, and of all people, me?  His reason: A "bromantic" getaway.
+                      </p>
+                      <p class="no_indent">
+                        What followed over the next week in NYC was the adventure of a lifetime.  We saw a Broadway production of The Lion King, rode around the city in a horse-driven carriage, and even experienced a classic over-priced cocktail at the Gansevoort.  But this was also followed by endless days and nights talking about our dreams, learning what scares of each of us, and even just hanging out together in silence, which I always count as a testament to true friendship.
+                      </p>
+                      <p class="no_indent">
+                        I'm proud to know Sunthar and am excited about everything I will be able to see him do in the future. One of which, of course, is in having the wonderful pleasure of finding the love of his life.  Congrats to both of you, and I hope that the next time he feels the urge for a getaway he takes you instead :)
                       </p>
                     </div>
                   </div>
@@ -572,7 +722,7 @@
                     <div class="col-md-4">
                       <div class="section">
                         <div class="img-circle big_circle_img">
-                          <%= image_tag("festivities_img-1.png", :alt => "img 2") %>
+                          <%= image_tag("wedding_party_hirav.png", :alt => "Hirav Gandhi") %>
                         </div>
                       </div>
                     </div>
@@ -594,7 +744,7 @@
                     <div class="col-md-4">
                       <div class="section">
                         <div class="img-circle big_circle_img">
-                          <%= image_tag("festivities_img-1.png", :alt => "img 2") %>
+                          <%= image_tag("wedding_party_luke.png", :alt => "Luke Li") %>
                         </div>
                       </div>
                     </div>
@@ -608,6 +758,9 @@
                       <p class="no_indent">
                         I first met Sunthar during our Phi Kappa Psi pledge period at the end of our freshman year at Stanford, but it wasn't until sophomore year that we really started to bond. By sheer happenstance, the two of us were assigned to be roommates in the fraternity house, which quickly led us to start calling ourselves "Harold and Kumar." It was only natural, then, that the two of us decided one night to walk from Phi Psi to Jack-in-the-Box to satisfy a late-night (non-marijuana-induced) junk food craving. (There is still yet to be a White Castle in Palo Alto.) Fortunately (or unfortunately) our adventure didn't involve cheetahs or tandem hang-gliding. The closest thing to Neil Patrick Harris was our fellow Phi Psi brother, Jose Campos, and the craziest thing that happened was asking a car behind us to help place our order since the drive-thru wouldn't serve pedestrians. But man, did those burgers and fries taste good all the same.
                       </p>
+                      <p class="no_indent">
+                        It's those memories that make me feel honored to be a part of Sunthar's wedding. During our three years of living together in Phi Psi (two of them as roommates), we saw each other at our best and at our worst; we celebrated each other's victories and helped each other grow into better people during our hardships; and our bond has only continued to grow as we've kept in touch during the years since graduation. I'm so excited that he has found someone to help him continue this journey, and I'm confident that he will be as dedicated to his marriage as he has been to our friendship.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -616,7 +769,7 @@
                     <div class="col-md-4">
                       <div class="section">
                         <div class="img-circle big_circle_img">
-                          <%= image_tag("festivities_img-2.png", :alt => "img 2") %>
+                          <%= image_tag("wedding_party_nick.png", :alt => "Nick Chandler") %>
                         </div>
                       </div>
                     </div>
@@ -628,54 +781,18 @@
                         The Rocket Scientist
                       </h4>
                       <p class="no_indent">
-                        Tommy is an awesome friend and brother. I have such great memories of growing up with Tommy and our relationship continues to grow. We always make the most of the time we have together and I know that he’ll continue to be there for me the rest of my life.
+                        Although I felt like I already knew all about him through Preeth's stories, the first time I actually met Sunthar was when he came to Phoenix to meet the family.  
+                      </p>
+                      <p class="no_indent">
+                        He had no trouble winning us over: he played a round of golf with my father-in-law, sang Indian karaoke with my mother-in-law, brought thoughtful techie gifts for my wife and new baby, and talked cars with me.  He fit right in with the family from Day One. 
+                      </p>
+                      <p class="no_indent">
+                        Congratulations to Sunthar and Preeth, and I'm looking forward to gaining a new brother!
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
-              <ol class="carousel-indicators">
-                <li data-target="#groomsmen_carousel" data-slide-to="0" class="active">
-                  <div class="img-circle small_circle_img">
-                    <%= image_tag("festivities_img-2.png", :alt => "img 2") %>
-                  </div>
-                </li>
-                <li data-target="#groomsmen_carousel" data-slide-to="1">
-                  <div class="img-circle small_circle_img">
-                    <%= image_tag("festivities_img-1.png", :alt => "img 2") %>
-                  </div>
-                </li>
-                <li data-target="#groomsmen_carousel" data-slide-to="2">
-                  <div class="img-circle small_circle_img">
-                    <%= image_tag("festivities_img-2.png", :alt => "img 2") %>
-                  </div>
-                </li>
-                <li data-target="#groomsmen_carousel" data-slide-to="3">
-                  <div class="img-circle small_circle_img">
-                    <%= image_tag("festivities_img-1.png", :alt => "img 2") %>
-                  </div>
-                </li>
-                <li data-target="#groomsmen_carousel" data-slide-to="4">
-                  <div class="img-circle small_circle_img">
-                    <%= image_tag("festivities_img-2.png", :alt => "img 2") %>
-                  </div>
-                </li>
-                <li data-target="#groomsmen_carousel" data-slide-to="5">
-                  <div class="img-circle small_circle_img">
-                    <%= image_tag("festivities_img-1.png", :alt => "img 2") %>
-                  </div>
-                </li>
-                <li data-target="#groomsmen_carousel" data-slide-to="6">
-                  <div class="img-circle small_circle_img">
-                    <%= image_tag("festivities_img-2.png", :alt => "img 2") %>
-                  </div>
-                </li>
-                <li data-target="#groomsmen_carousel" data-slide-to="5">
-                  <div class="img-circle small_circle_img">
-                    <%= image_tag("festivities_img-1.png", :alt => "img 2") %>
-                  </div>
-                </li>
-              </ol>
             </div>
           </div>
         </div>
@@ -683,7 +800,7 @@
     </div>
   </div>
   <div class="tab-pane" id="the_city">
-    <div class="jumbotron festivities">
+    <div class="jumbotron the_city_bg">
     </div>
     <div class="container">
       <div class="row">
@@ -792,7 +909,7 @@
             <div class="col-md-4 clearfix">
               <div class="section">
                 <div class="img-circle small_circle_img">
-                  <%= image_tag("festivities_img-1.png", :alt => "img 2") %>
+                  <%= image_tag("wedding_party_conal.png", :alt => "img 2") %>
                 </div>
                 <p class="text-center big_font">
                   Thing to eat one
@@ -834,7 +951,7 @@
     </div>
   </div>
   <div class="tab-pane" id="rsvp">
-    <div class="jumbotron about_us_bg">
+    <div class="jumbotron rsvp_bg">
     </div>
     <div class="container">
       <div class="row">
@@ -983,13 +1100,7 @@
     </div>
   </div>
   <div class="tab-pane" id="registry">
-    <div class="jumbotron has_video clearfix">
-      <video autoplay loop muted poster="assets/background-img-1.png">
-        <source src="assets/about_us.webm" 
-                type='video/webm;codecs="vp8, vorbis"'/>
-        <source src="assets/about_us.mp4"
-                type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'/>
-      </video>
+    <div class="jumbotron registry_bg">
     </div>
     <div class="container">
       <div class="row">
@@ -1074,27 +1185,118 @@
             <li data-target="#carousel-example-generic" data-slide-to="3"></li>
             <li data-target="#carousel-example-generic" data-slide-to="4"></li>
             <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="6"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="7"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="8"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="9"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="10"></li>
+
+            <li data-target="#carousel-example-generic" data-slide-to="11"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="12"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="13"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="14"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="15"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="16"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="17"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="18"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="19"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="20"></li>
+
+            <li data-target="#carousel-example-generic" data-slide-to="21"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="22"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="23"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="24"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="25"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="26"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="27"></li>
           </ol>
 
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
             <div class="item active">
-              <%= image_tag("background-img-1.png", :alt => "img 1") %>
+              <%= image_tag("slideshow/slideshow1.jpg", :alt => "img 1") %>
             </div>
             <div class="item">
-              <%= image_tag("background-img-2.png", :alt => "img 2") %>
+              <%= image_tag("slideshow/slideshow2.jpg", :alt => "img 1") %>
             </div>
             <div class="item">
-              <%= image_tag("background-img-1.png", :alt => "img 1") %>
+              <%= image_tag("slideshow/slideshow3.jpg", :alt => "img 1") %>
             </div>
             <div class="item">
-              <%= image_tag("background-img-2.png", :alt => "img 2") %>
+              <%= image_tag("slideshow/slideshow4.jpg", :alt => "img 1") %>
             </div>
             <div class="item">
-              <%= image_tag("background-img-1.png", :alt => "img 1") %>
+              <%= image_tag("slideshow/slideshow6.jpg", :alt => "img 1") %>
             </div>
             <div class="item">
-              <%= image_tag("background-img-2.png", :alt => "img 2") %>
+              <%= image_tag("slideshow/slideshow7.jpg", :alt => "img 1") %>
+            </div>
+            <div class="item">
+              <%= image_tag("slideshow/slideshow8.jpg", :alt => "img 1") %>
+            </div>
+            <div class="item">
+              <%= image_tag("slideshow/slideshow9.jpg", :alt => "img 1") %>
+            </div>
+            <div class="item">
+              <%= image_tag("slideshow/slideshow10.jpg", :alt => "img 1") %>
+            </div>
+
+
+            <div class="item">
+              <%= image_tag("slideshow/slideshow11.jpg", :alt => "img 1") %>
+            </div>
+            <div class="item">
+              <%= image_tag("slideshow/slideshow12.jpg", :alt => "img 1") %>
+            </div>
+            <div class="item">
+              <%= image_tag("slideshow/slideshow13.jpg", :alt => "img 1") %>
+            </div>
+            <div class="item">
+              <%= image_tag("slideshow/slideshow14.jpg", :alt => "img 1") %>
+            </div>
+            <div class="item">
+              <%= image_tag("slideshow/slideshow15.jpg", :alt => "img 1") %>
+            </div>
+            <div class="item">
+              <%= image_tag("slideshow/slideshow16.jpg", :alt => "img 1") %>
+            </div>
+            <div class="item">
+              <%= image_tag("slideshow/slideshow17.jpg", :alt => "img 1") %>
+            </div>
+            <div class="item">
+              <%= image_tag("slideshow/slideshow18.jpg", :alt => "img 1") %>
+            </div>
+            <div class="item">
+              <%= image_tag("slideshow/slideshow19.jpg", :alt => "img 1") %>
+            </div>
+            <div class="item">
+              <%= image_tag("slideshow/slideshow20.jpg", :alt => "img 1") %>
+            </div>
+
+
+            <div class="item">
+              <%= image_tag("slideshow/slideshow21.jpg", :alt => "img 1") %>
+            </div>
+            <div class="item">
+              <%= image_tag("slideshow/slideshow22.jpg", :alt => "img 1") %>
+            </div>
+            <div class="item">
+              <%= image_tag("slideshow/slideshow23.jpg", :alt => "img 1") %>
+            </div>
+            <div class="item">
+              <%= image_tag("slideshow/slideshow24.jpg", :alt => "img 1") %>
+            </div>
+            <div class="item">
+              <%= image_tag("slideshow/slideshow25.jpg", :alt => "img 1") %>
+            </div>
+            <div class="item">
+              <%= image_tag("slideshow/slideshow26.jpg", :alt => "img 1") %>
+            </div>
+            <div class="item">
+              <%= image_tag("slideshow/slideshow27.jpg", :alt => "img 1") %>
+            </div>
+            <div class="item">
+              <%= image_tag("slideshow/slideshow28.jpg", :alt => "img 1") %>
             </div>
           </div>
           <!-- Controls -->
