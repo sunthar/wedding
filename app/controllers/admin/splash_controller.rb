@@ -13,7 +13,7 @@ class Admin::SplashController < AdminController
     file.write response.body
     file.close
     data = CSV.open(file, 'r')
-    int_fields = [12, 13, 15, 16, 17, 18, 19, 20, 21]
+    int_fields = [12, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23]
     headers = data.shift
 
     data.each do |row|
@@ -24,7 +24,7 @@ class Admin::SplashController < AdminController
       user_params = {}
       row.each_with_index do |val, idx|
         new_val = val.to_s
-        new_val = val.to_i if int_fields.include?(idx)
+        new_val = val.to_i if new_val && int_fields.include?(idx)
         user_params[headers[idx]] = new_val unless val.blank?
       end
       user_params["other_people"] = user_params["other_people"].split(/\s*,\s*/) if user_params["other_people"]
@@ -37,7 +37,7 @@ class Admin::SplashController < AdminController
   end
 
   def export
-    fields = ["first_name", "last_name", "full_name", "salutation", "email", "access_code", "phone", "street_address", "city", "state", "zip", "other_people", "invited_to_ceremony", "invited_to_reception", "invited_by", "invitee_batch_a", "invitee_batch_b", "rsvp_ceremony", "rsvp_reception", "rsvp_sent", "reminder_sent", "wedding_info_sent", "table_number"]
+    fields = ["first_name", "last_name", "full_name", "salutation", "email", "access_code", "phone", "street_address", "city", "state", "zip", "other_people", "invited_to_ceremony", "invited_to_reception", "invited_to_ca_reception", "invited_by", "invitee_batch_a", "invitee_batch_b", "rsvp_ceremony", "rsvp_reception", "rsvp_ca_reception", "rsvp_sent", "reminder_sent", "wedding_info_sent", "table_number"]
     filename = "data-#{Time.now.strftime("%m-%d-%Y_%H-%M-%S")}"
     csv = fields.join(",") + "\n"
     id_to_other_names = {}
