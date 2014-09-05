@@ -81,9 +81,14 @@ textarea{
     &:hover{
       color: @purple;
     }
-    i{
-      font-size: 15px;
-      margin-right: 2px;
+    .wedding_logo{
+      margin-right: 5px;
+      margin-top: -13px;
+      height: 40px;
+      width: 40px;
+      background: url("monogram.png") no-repeat left top;
+      display: block;
+      float: left;
     }
   }
   .navbar-nav{
@@ -190,8 +195,16 @@ textarea{
   .square_img{
     width: 100%;
     overflow: hidden;
-    padding-bottom: 15px;
-    padding-top: 15px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+
+    &:hover{
+      opacity: 0.6;
+    }
 
     img{
       width: 100%;
