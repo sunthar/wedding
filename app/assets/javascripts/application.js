@@ -22,5 +22,11 @@ $( document ).ready(function() {
           interval: false
       });
   });
+  var clickOustideNav = function(e) {
+    if ($(e.target).closest(".navbar-toggle").length > 0)
+      return;
+    $(".bs-navbar-collapse").removeClass("in");
+  };
+  $("body").bind('click', clickOustideNav);
 });
- 
+
