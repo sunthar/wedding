@@ -30,6 +30,7 @@ gem 'spring',        group: :development
 
 gem 'gdata', '1.1.2', :path => "vendor/gems/gdata-1.1.2"
 gem 'nokogiri'
+gem 'heroku-deflater', :group => :production
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
