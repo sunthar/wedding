@@ -77,11 +77,13 @@
             <td><%= user.other_people.join(", ") %></td>
             <td><%= user.invited_to_ceremony %></td>
             <td><%= user.invited_to_reception %></td>
+            <td><%= user.invited_to_ca_reception %></td>
             <td><%= user.invited_by %></td>
             <td><%= user.invitee_batch_a %></td>
             <td><%= user.invitee_batch_b %></td>
             <td><%= user.rsvp_ceremony %></td>
-            <td><%= user.rsvp_ceremony %></td>
+            <td><%= user.rsvp_reception %></td>
+            <td><%= user.rsvp_ca_reception %></td>
             <td><%= user.rsvp_sent %></td>
             <td><%= user.reminder_sent %></td>
             <td><%= user.wedding_info_sent %></td>
@@ -94,7 +96,7 @@
   </div>
 </div>
 <script type="text/javascript">
-  var fields = ["first_name", "last_name", "full_name", "salutation", "email", "access_code", "phone", "street_address", "city", "state", "zip", "other_people", "invited_to_ceremony", "invited_to_reception", "invited_by", "invitee_batch_a", "invitee_batch_b", "rsvp_ceremony", "rsvp_reception", "rsvp_sent", "reminder_sent", "wedding_info_sent", "table_number"];
+  var fields = ["first_name", "last_name", "full_name", "salutation", "email", "access_code", "phone", "street_address", "city", "state", "zip", "other_people", "invited_to_ceremony", "invited_to_reception", "invited_to_ca_reception", "invited_by", "invitee_batch_a", "invitee_batch_b", "rsvp_ceremony", "rsvp_reception", "rsvp_ca_reception", "rsvp_sent", "reminder_sent", "wedding_info_sent", "table_number"];
   // $(document).ajaxStart($.blockUI({ message: '<h1>Importing from google doc...</h1>' })).ajaxStop($.unblockUI);
   $(document).ready(function() {
     $("#import_spreadsheet").click(function() {
