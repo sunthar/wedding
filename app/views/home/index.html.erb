@@ -13,7 +13,7 @@
     </div>
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
-        <li class="active">
+        <li <% unless @rsvp %>class="active"<% end %>>
           <a href="#about_us" role="tab" data-toggle="tab">About Us</a>
         </li>
         <li>
@@ -26,7 +26,7 @@
           <a href="#the_city" role="tab" data-toggle="tab">The City</a>
         </li>
         <li>
-          <a href="#rsvp" role="tab" data-toggle="tab">RSVP</a>
+          <a href="#rsvp" role="tab" data-toggle="tab" id='rsvp_tab'>RSVP</a>
         </li>
         <li>
           <a href="#registry" role="tab" data-toggle="tab">Registry</a>
@@ -58,7 +58,7 @@
           <div class="box clearfix">
             <i class="glyphicon glyphicon-heart"></i>
             <p>
-              We are engaged! Our serendipitous first meeting was taken straight out of a movie (seriously, we met at a Gatsby themed Gala). Although we lived in different cities, we bridged the distance with endless phone calls and frequent trips between Los Angeles and San Francisco.  Our love for adventure and good food has created some wonderful memories, including trying new restaurants and recipes, theme parks, hikes, wine tasting, magic castles, and more.  We have so much in common, most importantly our shared values and incredible communities of family and friends.  We are so thankful for your support through every step and can’t wait to start the next chapter with your blessings. 
+              We are engaged! Our serendipitous first meeting was taken straight out of a movie (seriously, we met at a Gatsby themed Gala). Although we lived in different cities, we bridged the distance with endless phone calls and frequent trips between Los Angeles and San Francisco.  Our love for adventure and good food has created some wonderful memories, including trying new restaurants and recipes, theme parks, hikes, wine tasting, magic castles, and more.  We have so much in common, most importantly our shared values and incredible communities of family and friends.  We are so thankful for your support through every step and can’t wait to start the next chapter with your blessings.
             </p>
           </div>
         </div>
@@ -94,7 +94,7 @@
                   It had only been a day since we met but Preeth and I had already spent countless hours on the phone chatting with each other. With every story she told me, I was more amazed and intrigued by her. She made me laugh and impressed me with her ambitions. I was already falling for her.
                 </p>
                 <p>
-                  As she was finishing up her final story for the day, I was mentally rehearsing the couple of sentences I had written down to ask her out. I have never been so nervous. As I waited for her to finish her story, I summoned every ounce of courage I had to recite those words. There was a pause, and then she uttered the words that would change my life forever. “Yes I would love to.”  
+                  As she was finishing up her final story for the day, I was mentally rehearsing the couple of sentences I had written down to ask her out. I have never been so nervous. As I waited for her to finish her story, I summoned every ounce of courage I had to recite those words. There was a pause, and then she uttered the words that would change my life forever. “Yes I would love to.”
                 </p>
                 <p>
                   Being with Preeth has been one of the best things in my life, and I am honored and proud to be her life partner, forever and always.
@@ -1002,7 +1002,7 @@
                   <%= image_tag("city_img-6.png", :alt => "img 2") %>
                 </div>
                 <h3>
-                  Olive &amp; Ivy 
+                  Olive &amp; Ivy
                 </h3>
                 <p class="text-center big_font">
                   Classy Scottsdale dinning
@@ -1390,12 +1390,21 @@
 </div>
 
 <script type="text/javascript">
+  var RSVP = false;
+  <% if @rsvp %>RSVP = true; <% end %>
+  <% if @access_data %>
+  var ACCESS_DATA = <%= raw(@access_data.to_json) %>;
+  <% end %>
   $( document ).ready(function() {
       //$('.wedding_party_carousel').carousel('cycle');
       $(".about_us_carousel").click(function() {
         $("#carousel-example-generic").carousel(parseInt($(this).attr("idx")));
         $("#photo_slideshow").modal('show');
       });
+      if (RSVP) {
+        $("#rsvp_tab").tab('show');
+        RSVP = false;
+      }
   });
 </script>
 

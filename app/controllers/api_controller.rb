@@ -37,4 +37,41 @@ class ApiController < ApplicationController
     end
   end
 
+  def rsvp
+    begin
+      info = params[:params]
+      uid = info['rsvp_user_id']
+      u = User.find(uid)
+      u.update({
+        :street_address => info['address'],
+        :city => info['city'],
+        :state => info['state'],
+        :zip => info['zip'],
+        :phone => info['cell'],
+        :note => info['note']
+      })
+      info['rsvps'].each do |idx, rsvp_info|
+        next if rsvp_info['invites'].to_s == 'no'
+        answer = 0
+        answer = 1 if rsvp_info['answer'].to_s == 'yes'
+        field = 'rsvp_' + rsvp_info['invites'].to_s
+        field = 'rsvp_ca_reception' if field == 'rsvp_careception'
+        User.find(rsvp_info['uid'].to_i).update(:"#{field}" => answer)
+      end
+      @result = "OK"
+    rescue Exception => e
+      @error = e.message
+    end
+
+    respond_to do |format|
+      format.json {
+        render json: {
+          "result" => @result,
+          "error" => @error
+        },
+        status: :ok
+      }
+    end
+  end
+
 end

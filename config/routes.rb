@@ -15,5 +15,7 @@ Rails.application.routes.draw do
     get ':action'
   end
 
+  match 'rsvp' => 'home#rsvp', via: [:get]
+
 
 end
