@@ -26,13 +26,16 @@ $(document).ready(function() {
     var email = $("#rsvp_email").val();
     var passcode = $("#rsvp_passcode").val();
     if (!email || !passcode) {
-      alert("Fill out the forms man!");
+      alert("Please fill out your email and passcode!");
       return false;
     }
     PS.call("check_rsvp_credentials", {email: email, passcode: passcode}, function(data) {
       setupRSVPInfo(data);
     }, function(err) {
       $("#rsvp_invalid").show();
+      $('html, body').animate({
+        scrollTop: ($('#rsvp_invalid').first().offset().top-100)
+      },500);
     });
     return false;
   });
@@ -68,12 +71,18 @@ $(document).ready(function() {
     for (var uid in uidDidRSVP) {
       if (uidDidRSVP[uid] == "no") {
         $("#rsvp_no_rsvp").show();
+        $('html, body').animate({
+          scrollTop: ($('#rsvp_no_rsvp').first().offset().top-100)
+        },500);
         return false;
       }
     }
     if (!address || !city || !state || !zip || !cell) {
       $("#rsvp_all_fields").show();
-        return false;
+      $('html, body').animate({
+        scrollTop: ($('#rsvp_all_fields').first().offset().top-100)
+      },500);
+      return false;
     }
     var params = {
       address: address, city: city, state: state, zip: zip,
