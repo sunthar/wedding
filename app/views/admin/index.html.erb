@@ -59,6 +59,8 @@
             <th>reminder_sent</th>
             <th>wedding_info_sent</th>
             <th>table_number</th>
+            <th>save_date_sent</th>
+            <th>physical_invitation_sent</th>
           </tr>
         </thead>
         <tbody id="user_table_body">
@@ -90,6 +92,8 @@
             <td><%= user.reminder_sent %></td>
             <td><%= user.wedding_info_sent %></td>
             <td><%= user.table_number %></td>
+            <td><%= user.save_date_sent %></td>
+            <td><%= user.physical_invitation_sent %></td>
           </tr>
           <% end %>
         </tbody>
@@ -98,7 +102,7 @@
   </div>
 </div>
 <script type="text/javascript">
-  var fields = ["first_name", "last_name", "full_name", "salutation", "email", "access_code", "phone", "street_address", "city", "state", "zip", "other_people", "invited_to_ceremony", "invited_to_reception", "invited_to_ca_reception", "invited_by", "invitee_batch_a", "invitee_batch_b", "rsvp_ceremony", "rsvp_reception", "rsvp_ca_reception", "rsvp_sent", "reminder_sent", "wedding_info_sent", "table_number"];
+  var fields = ["first_name", "last_name", "full_name", "salutation", "email", "access_code", "phone", "street_address", "city", "state", "zip", "other_people", "invited_to_ceremony", "invited_to_reception", "invited_to_ca_reception", "invited_by", "invitee_batch_a", "invitee_batch_b", "rsvp_ceremony", "rsvp_reception", "rsvp_ca_reception", "rsvp_sent", "reminder_sent", "wedding_info_sent", "table_number", "save_date_sent", "physical_invitation_sent"];
   // $(document).ajaxStart($.blockUI({ message: '<h1>Importing from google doc...</h1>' })).ajaxStop($.unblockUI);
   $(document).ready(function() {
     $("#import_spreadsheet").click(function() {
