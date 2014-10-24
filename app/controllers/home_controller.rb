@@ -18,10 +18,11 @@ class HomeController < ApplicationController
           people.push(other_u) unless other_u.nil?
         end
         @access_data = {
-          :name => u.first_name,
+          :name => u.salutation,
           :people => people,
           :invites => invites,
-          :user_id => u.id
+          :user_id => u.id,
+          :user => u
         }
       end
     end

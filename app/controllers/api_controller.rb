@@ -20,7 +20,8 @@ class ApiController < ApplicationController
         :name => u.salutation,
         :people => people,
         :invites => invites,
-        :user_id => u.id
+        :user_id => u.id,
+        :user => u
       }
     rescue Exception => e
       @error = e.message
