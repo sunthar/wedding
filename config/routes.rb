@@ -6,9 +6,11 @@ Rails.application.routes.draw do
   root 'home#index'
 
   namespace :admin do
-    root to: "splash#index"
+
+    match 'whoallarecoming' => 'splash#index', via: [:get]
     match 'splash/import' => 'splash#import', via: [:get]
     match 'splash/export' => 'splash#export', via: [:get]
+    get '', to: redirect('')
   end
 
   namespace :api do
