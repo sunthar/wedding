@@ -115,6 +115,11 @@ $(document).ready(function() {
       }
       rsvps.push(rsvp);
     });
+    var someoneCanGo = false;
+    for (var i = 0; i < rsvps.length; i++) {
+      if (rsvps[i].answer == "yes" && rsvps[i].invites != "no")
+        someoneCanGo = true;
+    }
     for (var uid in uidDidRSVP) {
       if (uidDidRSVP[uid] == "no") {
         $("#rsvp_no_rsvp").show();
@@ -124,7 +129,7 @@ $(document).ready(function() {
         return false;
       }
     }
-    if (!address || !city || !state || !zip || !cell) {
+    if (someoneCanGo && (!address || !city || !state || !zip || !cell)) {
       $("#rsvp_all_fields").show();
       $('html, body').animate({
         scrollTop: ($('#rsvp_all_fields').first().offset().top-100)
