@@ -1,7 +1,51 @@
 class Admin::SplashController < AdminController
 
   def index
-    @users = User.all
+    @users = User.all.sort
+    @az_wedding = {
+      'yes' => 0,
+      'no' => 0,
+      'na' => 0
+    }
+    @az_reception = {
+      'yes' => 0,
+      'no' => 0,
+      'na' => 0
+    }
+    @ca_reception = {
+      'yes' => 0,
+      'no' => 0,
+      'na' => 0
+    }
+    @users.each do |u|
+      if u.invited_to_ceremony && u.invited_to_ceremony == 1
+        if u.rsvp_ceremony == 1
+          @az_wedding['yes'] += 1
+        elsif u.rsvp_ceremony == 0
+          @az_wedding['no'] += 1
+        else
+          @az_wedding['na'] += 1
+        end
+      end
+      if u.invited_to_reception && u.invited_to_reception == 1
+        if u.rsvp_reception == 1
+          @az_reception['yes'] += 1
+        elsif u.rsvp_reception == 0
+          @az_reception['no'] += 1
+        else
+          @az_reception['na'] += 1
+        end
+      end
+      if u.invited_to_ceremony && u.invited_to_ceremony == 1
+        if u.rsvp_ca_reception == 1
+          @ca_reception['yes'] += 1
+        elsif u.rsvp_ca_reception == 0
+          @ca_reception['no'] += 1
+        else
+          @ca_reception['na'] += 1
+        end
+      end
+    end
   end
 
   def import

@@ -30,6 +30,38 @@
 <div class="tab-content main_content">
   <div class="tab-pane active" id="invitee_list">
     <div class="section">
+      <table class='table table-bordered' style="width:400px;">
+        <thead>
+          <tr>
+            <td>Occasion RSVPs</td>
+            <td>yes</td>
+            <td>no</td>
+            <td>not responded</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AZ Ceremony</td>
+            <td><%= @az_wedding['yes'] %></td>
+            <td><%= @az_wedding['no'] %></td>
+            <td><%= @az_wedding['na'] %></td>
+          </tr>
+          <tr>
+            <td>AZ Reception</td>
+            <td><%= @az_reception['yes'] %></td>
+            <td><%= @az_reception['no'] %></td>
+            <td><%= @az_reception['na'] %></td>
+          </tr>
+          <tr>
+            <td>CA Reception/td>
+            <td><%= @ca_reception['yes'] %></td>
+            <td><%= @ca_reception['no'] %></td>
+            <td><%= @ca_reception['na'] %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
       <table class="table table-condensed table-bordered table-striped">
         <thead>
           <tr>
