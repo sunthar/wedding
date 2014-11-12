@@ -142,7 +142,7 @@ $(document).ready(function() {
       rsvp_user_id: rsvp_user_id,
       rsvps: rsvps
     }
-    PS.call("rsvp", {params:params}, function(data) {
+    PS.post("rsvp", {params:params}, function(data) {
       $("#rsvp_second").hide();
       $("#rsvp_third").show();
     }, function(err) {

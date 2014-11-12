@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     get ':action'
+    post ':action'
   end
 
   match 'rsvp' => 'home#rsvp', via: [:get]
