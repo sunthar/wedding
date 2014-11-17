@@ -17,11 +17,11 @@
         <a href="#invitee_list" role="tab" data-toggle="tab">Invitee List</a>
       </li>
     -->
-      <li class="navbar-actions">
+      <li class="navbar-actions" style="display: none">
         <!-- <button class="btn btn-success" id="import_spreadsheet">Import Spreadsheet</button> -->
         <a href="#" class="btn btn-success" id="import_spreadsheet">Import Spreadsheet</a>
       </li>
-      <li class="navbar-actions">
+      <li class="navbar-actions" style="display: none">
         <a class="btn btn-warning" href="/admin/splash/export" target="_blank">Export Data</a>
       </li>
     </ul>
@@ -65,11 +65,11 @@
       <table class="table table-condensed table-bordered table-striped">
         <thead>
           <tr>
-            <th></th>
-            <th>first_name</th>
-            <th>last_name</th>
             <th>full_name</th>
-            <th>salutation</th>
+            <th>other_people</th>
+            <th>rsvp_ceremony</th>
+            <th>rsvp_reception</th>
+            <th>rsvp_ca_reception</th>
             <th>email</th>
             <th>access_code</th>
             <th>phone</th>
@@ -77,16 +77,10 @@
             <th>city</th>
             <th>state</th>
             <th>zip</th>
-            <th>other_people</th>
             <th>invited_to_ceremony</th>
             <th>invited_to_reception</th>
             <th>invited_to_ca_reception</th>
             <th>invited_by</th>
-            <th>invitee_batch_a</th>
-            <th>invitee_batch_b</th>
-            <th>rsvp_ceremony</th>
-            <th>rsvp_reception</th>
-            <th>rsvp_ca_reception</th>
             <th>rsvp_sent</th>
             <th>reminder_sent</th>
             <th>wedding_info_sent</th>
@@ -98,11 +92,11 @@
         <tbody id="user_table_body">
           <% @users.each do |user| %>
           <tr>
-            <td><input type="checkbox"></td>
-            <td><%= user.first_name %></td>
-            <td><%= user.last_name %></td>
             <td><%= user.full_name %></td>
-            <td><%= user.salutation %></td>
+            <td><%= user.other_people.join(", ") %></td>
+            <td><%= user.rsvp_ceremony %></td>
+            <td><%= user.rsvp_reception %></td>
+            <td><%= user.rsvp_ca_reception %></td>
             <td><%= user.email %></td>
             <td><%= user.access_code %></td>
             <td><%= user.phone %></td>
@@ -110,16 +104,10 @@
             <td><%= user.city %></td>
             <td><%= user.state %></td>
             <td><%= user.zip %></td>
-            <td><%= user.other_people.join(", ") %></td>
             <td><%= user.invited_to_ceremony %></td>
             <td><%= user.invited_to_reception %></td>
             <td><%= user.invited_to_ca_reception %></td>
             <td><%= user.invited_by %></td>
-            <td><%= user.invitee_batch_a %></td>
-            <td><%= user.invitee_batch_b %></td>
-            <td><%= user.rsvp_ceremony %></td>
-            <td><%= user.rsvp_reception %></td>
-            <td><%= user.rsvp_ca_reception %></td>
             <td><%= user.rsvp_sent %></td>
             <td><%= user.reminder_sent %></td>
             <td><%= user.wedding_info_sent %></td>
