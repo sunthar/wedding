@@ -66,6 +66,7 @@
         <thead>
           <tr>
             <th>full_name</th>
+            <th>RSVP Link</th>
             <th>other_people</th>
             <th>rsvp_ceremony</th>
             <th>rsvp_reception</th>
@@ -93,6 +94,7 @@
           <% @users.each do |user| %>
           <tr>
             <td><%= user.full_name %></td>
+            <td><a href="http://www.preethandsunthar.com/rsvp?access_code=<%= user.access_code %>" target="_blank">RSVP link</a></td>
             <td><%= user.other_people.join(", ") %></td>
             <td><%= user.rsvp_ceremony %></td>
             <td><%= user.rsvp_reception %></td>
