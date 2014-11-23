@@ -30,6 +30,7 @@
 <div class="tab-content main_content">
   <div class="tab-pane active" id="invitee_list">
     <div class="section">
+      <h3>Overall</h3>
       <table class='table table-bordered' style="width:400px;">
         <thead>
           <tr>
@@ -48,8 +49,8 @@
           </tr>
           <tr>
             <td>AZ Reception</td>
-            <td><%= @az_reception['yes'] %></td>
-            <td><%= @az_reception['no'] %></td>
+            <td><%= @az_reception_bride['yes'] %></td>
+            <td><%= @az_reception_bride['no'] %></td>
             <td><%= @az_reception['na'] %></td>
           </tr>
           <tr>
@@ -57,6 +58,72 @@
             <td><%= @ca_reception['yes'] %></td>
             <td><%= @ca_reception['no'] %></td>
             <td><%= @ca_reception['na'] %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <h3>Bride side</h3>
+      <table class='table table-bordered' style="width:400px;">
+        <thead>
+          <tr>
+            <td>Occasion RSVPs</td>
+            <td>yes</td>
+            <td>no</td>
+            <td>not responded</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AZ Ceremony</td>
+            <td><%= @az_wedding_bride['yes'] %></td>
+            <td><%= @az_wedding_bride['no'] %></td>
+            <td><%= @az_wedding_bride['na'] %></td>
+          </tr>
+          <tr>
+            <td>AZ Reception</td>
+            <td><%= @az_reception_bride['yes'] %></td>
+            <td><%= @az_reception_bride['no'] %></td>
+            <td><%= @az_reception_bride['na'] %></td>
+          </tr>
+          <tr>
+            <td>CA Reception/td>
+            <td><%= @ca_reception_bride['yes'] %></td>
+            <td><%= @ca_reception_bride['no'] %></td>
+            <td><%= @ca_reception_bride['na'] %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section">
+      <h3>Groom Side</h3>
+      <table class='table table-bordered' style="width:400px;">
+        <thead>
+          <tr>
+            <td>Occasion RSVPs</td>
+            <td>yes</td>
+            <td>no</td>
+            <td>not responded</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AZ Ceremony</td>
+            <td><%= @az_wedding_groom['yes'] %></td>
+            <td><%= @az_wedding_groom['no'] %></td>
+            <td><%= @az_wedding_groom['na'] %></td>
+          </tr>
+          <tr>
+            <td>AZ Reception</td>
+            <td><%= @az_reception_groom['yes'] %></td>
+            <td><%= @az_reception_groom['no'] %></td>
+            <td><%= @az_reception_groom['na'] %></td>
+          </tr>
+          <tr>
+            <td>CA Reception/td>
+            <td><%= @ca_reception_groom['yes'] %></td>
+            <td><%= @ca_reception_groom['no'] %></td>
+            <td><%= @ca_reception_groom['na'] %></td>
           </tr>
         </tbody>
       </table>
