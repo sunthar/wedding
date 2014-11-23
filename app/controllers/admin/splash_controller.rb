@@ -61,7 +61,7 @@ class Admin::SplashController < AdminController
         end
       end
       #Bride stuff
-      if (u.invited_to_ceremony && u.invited_to_ceremony == 1) && (u.invited_by == "Preeth" || u.invited_by == "Rashmi" )
+      if (u.invited_to_ceremony && u.invited_to_ceremony == 1) && (u.invited_by == "Preeth" || u.invited_by == "Rashmi" || u.invited_by == "preeth" || u.invited_by == "rashmi" )
         if u.rsvp_ceremony == 1
           @az_wedding_bride['yes'] += 1
         elsif u.rsvp_ceremony == 0
@@ -72,7 +72,7 @@ class Admin::SplashController < AdminController
       end
 
       #Groom stuff
-      if (u.invited_to_ceremony && u.invited_to_ceremony == 1) && (u.invited_by == "Sunthar" || u.invited_by == "Dhanya" )
+      if (u.invited_to_ceremony && u.invited_to_ceremony == 1) && (u.invited_by == "Sunthar" || u.invited_by == "Dhanya" || u.invited_by == "sunthar" || u.invited_by == "dhanya" )
         if u.rsvp_ceremony == 1
           @az_wedding_groom['yes'] += 1
         elsif u.rsvp_ceremony == 0
@@ -92,7 +92,7 @@ class Admin::SplashController < AdminController
         end
       end
       #Bride stuff
-      if (u.invited_to_reception && u.invited_to_reception == 1) && (u.invited_by == "Preeth" || u.invited_by == "Rashmi" )
+      if (u.invited_to_reception && u.invited_to_reception == 1) && (u.invited_by == "Preeth" || u.invited_by == "Rashmi" || u.invited_by == "preeth" || u.invited_by == "rashmi" )
         if u.rsvp_reception == 1
           @az_reception_bride['yes'] += 1
         elsif u.rsvp_reception == 0
@@ -103,7 +103,7 @@ class Admin::SplashController < AdminController
       end
 
       #Groom stuff
-      if (u.invited_to_reception && u.invited_to_reception == 1) && (u.invited_by == "Sunthar" || u.invited_by == "Dhanya" )
+      if (u.invited_to_reception && u.invited_to_reception == 1) && (u.invited_by == "Sunthar" || u.invited_by == "Dhanya" || u.invited_by == "sunthar" || u.invited_by == "dhanya" )
         if u.rsvp_reception == 1
           @az_reception_groom['yes'] += 1
         elsif u.rsvp_reception == 0
@@ -125,7 +125,7 @@ class Admin::SplashController < AdminController
       end
 
       #Bride stuff
-      if (u.invited_to_ceremony && u.invited_to_ceremony == 1) && (u.invited_by == "Preeth" || u.invited_by == "Rashmi" )
+      if (u.invited_to_ceremony && u.invited_to_ceremony == 1) && (u.invited_by == "Preeth" || u.invited_by == "Rashmi" || u.invited_by == "preeth" || u.invited_by == "rashmi"  )
         if u.rsvp_ca_reception == 1
           @ca_reception_bride['yes'] += 1
         elsif u.rsvp_ca_reception == 0
@@ -136,7 +136,7 @@ class Admin::SplashController < AdminController
       end
 
       #Groom stuff
-      if (u.invited_to_ceremony && u.invited_to_ceremony == 1) && (u.invited_by == "Sunthar" || u.invited_by == "Dhanya" )
+      if (u.invited_to_ceremony && u.invited_to_ceremony == 1) && (u.invited_by == "Sunthar" || u.invited_by == "Dhanya" || u.invited_by == "sunthar" || u.invited_by == "dhanya" )
         if u.rsvp_ca_reception == 1
           @ca_reception_groom['yes'] += 1
         elsif u.rsvp_ca_reception == 0
