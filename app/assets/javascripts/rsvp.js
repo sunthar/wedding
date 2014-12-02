@@ -129,7 +129,7 @@ $(document).ready(function() {
         return false;
       }
     }
-    if (someoneCanGo && (!address || !city || !state || !zip || !cell)) {
+    if (someoneCanGo && (!address || !city || !state || !zip)) {
       $("#rsvp_all_fields").show();
       $('html, body').animate({
         scrollTop: ($('#rsvp_all_fields').first().offset().top-100)
