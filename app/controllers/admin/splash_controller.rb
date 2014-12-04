@@ -18,38 +18,74 @@ class Admin::SplashController < AdminController
       'na' => 0
     }
 
+    #Bride counts Preeth
+    @az_wedding_bride_preeth = {
+      'yes' => 0,
+      'no' => 0,
+      'na' => 0
+    }
+    @az_reception_bride_preeth = {
+      'yes' => 0,
+      'no' => 0,
+      'na' => 0
+    }
+    @ca_reception_bride_preeth = {
+      'yes' => 0,
+      'no' => 0,
+      'na' => 0
+    }
+
     #Bride counts
-    @az_wedding_bride = {
+    @az_wedding_bride_rashmi = {
       'yes' => 0,
       'no' => 0,
       'na' => 0
     }
-    @az_reception_bride = {
+    @az_reception_bride_rashmi = {
       'yes' => 0,
       'no' => 0,
       'na' => 0
     }
-    @ca_reception_bride = {
+    @ca_reception_bride_rashmi = {
       'yes' => 0,
       'no' => 0,
       'na' => 0
     }
-    #Groom counts
-    @az_wedding_groom = {
+    #Groom counts Sunthar
+    @az_wedding_groom_sunthar = {
       'yes' => 0,
       'no' => 0,
       'na' => 0
     }
-    @az_reception_groom = {
+    @az_reception_groom_sunthar = {
       'yes' => 0,
       'no' => 0,
       'na' => 0
     }
-    @ca_reception_groom = {
+    @ca_reception_groom_sunthar = {
       'yes' => 0,
       'no' => 0,
       'na' => 0
     }
+
+    #Groom counts Dhanya
+    @az_wedding_groom_dhanya = {
+      'yes' => 0,
+      'no' => 0,
+      'na' => 0
+    }
+    @az_reception_groom_dhanya = {
+      'yes' => 0,
+      'no' => 0,
+      'na' => 0
+    }
+    @ca_reception_groom_dhanya = {
+      'yes' => 0,
+      'no' => 0,
+      'na' => 0
+    }
+
+
     @users.each do |u|
       if u.invited_to_ceremony && u.invited_to_ceremony == 1
         if u.rsvp_ceremony == 1
@@ -61,24 +97,44 @@ class Admin::SplashController < AdminController
         end
       end
       #Bride stuff
-      if (u.invited_to_ceremony && u.invited_to_ceremony == 1) && (u.invited_by == "Preeth" || u.invited_by == "Rashmi" || u.invited_by == "preeth" || u.invited_by == "rashmi" )
+      if (u.invited_to_ceremony && u.invited_to_ceremony == 1) && (u.invited_by == "Preeth" || u.invited_by == "preeth")
         if u.rsvp_ceremony == 1
-          @az_wedding_bride['yes'] += 1
+          @az_wedding_bride_preeth['yes'] += 1
         elsif u.rsvp_ceremony == 0
-          @az_wedding_bride['no'] += 1
+          @az_wedding_bride_preeth['no'] += 1
         else
-          @az_wedding_bride['na'] += 1
+          @az_wedding_bride_preeth['na'] += 1
+        end
+      end
+
+      if (u.invited_to_ceremony && u.invited_to_ceremony == 1) && (u.invited_by == "Rashmi" || u.invited_by == "rashmi" )
+        if u.rsvp_ceremony == 1
+          @az_wedding_bride_rashmi['yes'] += 1
+        elsif u.rsvp_ceremony == 0
+          @az_wedding_bride_rashmi['no'] += 1
+        else
+          @az_wedding_bride_rashmi['na'] += 1
         end
       end
 
       #Groom stuff
-      if (u.invited_to_ceremony && u.invited_to_ceremony == 1) && (u.invited_by == "Sunthar" || u.invited_by == "Dhanya" || u.invited_by == "sunthar" || u.invited_by == "dhanya" )
+      if (u.invited_to_ceremony && u.invited_to_ceremony == 1) && (u.invited_by == "Sunthar" || u.invited_by == "sunthar")
         if u.rsvp_ceremony == 1
-          @az_wedding_groom['yes'] += 1
+          @az_wedding_groom_sunthar['yes'] += 1
         elsif u.rsvp_ceremony == 0
-          @az_wedding_groom['no'] += 1
+          @az_wedding_groom_sunthar['no'] += 1
         else
-          @az_wedding_groom['na'] += 1
+          @az_wedding_groom_sunthar['na'] += 1
+        end
+      end
+
+      if (u.invited_to_ceremony && u.invited_to_ceremony == 1) && (u.invited_by == "Dhanya" || u.invited_by == "dhanya")
+        if u.rsvp_ceremony == 1
+          @az_wedding_groom_dhanya['yes'] += 1
+        elsif u.rsvp_ceremony == 0
+          @az_wedding_groom_dhanya['no'] += 1
+        else
+          @az_wedding_groom_dhanya['na'] += 1
         end
       end
 
@@ -92,24 +148,44 @@ class Admin::SplashController < AdminController
         end
       end
       #Bride stuff
-      if (u.invited_to_reception && u.invited_to_reception == 1) && (u.invited_by == "Preeth" || u.invited_by == "Rashmi" || u.invited_by == "preeth" || u.invited_by == "rashmi" )
+      if (u.invited_to_reception && u.invited_to_reception == 1) && (u.invited_by == "Preeth" || u.invited_by == "preeth" )
         if u.rsvp_reception == 1
-          @az_reception_bride['yes'] += 1
+          @az_reception_bride_preeth['yes'] += 1
         elsif u.rsvp_reception == 0
-          @az_reception_bride['no'] += 1
+          @az_reception_bride_preeth['no'] += 1
         else
-          @az_reception_bride['na'] += 1
+          @az_reception_bride_preeth['na'] += 1
+        end
+      end
+
+      if (u.invited_to_reception && u.invited_to_reception == 1) && (u.invited_by == "Rashmi" || u.invited_by == "rashmi" )
+        if u.rsvp_reception == 1
+          @az_reception_bride_rashmi['yes'] += 1
+        elsif u.rsvp_reception == 0
+          @az_reception_bride_rashmi['no'] += 1
+        else
+          @az_reception_bride_rashmi['na'] += 1
         end
       end
 
       #Groom stuff
-      if (u.invited_to_reception && u.invited_to_reception == 1) && (u.invited_by == "Sunthar" || u.invited_by == "Dhanya" || u.invited_by == "sunthar" || u.invited_by == "dhanya" )
+      if (u.invited_to_reception && u.invited_to_reception == 1) && (u.invited_by == "Sunthar" || u.invited_by == "sunthar" )
         if u.rsvp_reception == 1
-          @az_reception_groom['yes'] += 1
+          @az_reception_groom_sunthar['yes'] += 1
         elsif u.rsvp_reception == 0
-          @az_reception_groom['no'] += 1
+          @az_reception_groom_sunthar['no'] += 1
         else
-          @az_reception_groom['na'] += 1
+          @az_reception_groom_sunthar['na'] += 1
+        end
+      end
+
+      if (u.invited_to_reception && u.invited_to_reception == 1) && (u.invited_by == "Dhanya" || u.invited_by == "dhanya" )
+        if u.rsvp_reception == 1
+          @az_reception_groom_dhanya['yes'] += 1
+        elsif u.rsvp_reception == 0
+          @az_reception_groom_dhanya['no'] += 1
+        else
+          @az_reception_groom_dhanya['na'] += 1
         end
       end
 
@@ -125,24 +201,44 @@ class Admin::SplashController < AdminController
       end
 
       #Bride stuff
-      if (u.invited_to_ceremony && u.invited_to_ceremony == 1) && (u.invited_by == "Preeth" || u.invited_by == "Rashmi" || u.invited_by == "preeth" || u.invited_by == "rashmi"  )
+      if (u.invited_to_ceremony && u.invited_to_ceremony == 1) && (u.invited_by == "Preeth" || u.invited_by == "preeth"  )
         if u.rsvp_ca_reception == 1
-          @ca_reception_bride['yes'] += 1
+          @ca_reception_bride_preeth['yes'] += 1
         elsif u.rsvp_ca_reception == 0
-          @ca_reception_bride['no'] += 1
+          @ca_reception_bride_preeth['no'] += 1
         else
-          @ca_reception_bride['na'] += 1
+          @ca_reception_bride_preeth['na'] += 1
+        end
+      end
+
+      if (u.invited_to_ceremony && u.invited_to_ceremony == 1) && (u.invited_by == "Rashmi" || u.invited_by == "rashmi"  )
+        if u.rsvp_ca_reception == 1
+          @ca_reception_bride_rashmi['yes'] += 1
+        elsif u.rsvp_ca_reception == 0
+          @ca_reception_bride_rashmi['no'] += 1
+        else
+          @ca_reception_bride_rashmi['na'] += 1
         end
       end
 
       #Groom stuff
-      if (u.invited_to_ceremony && u.invited_to_ceremony == 1) && (u.invited_by == "Sunthar" || u.invited_by == "Dhanya" || u.invited_by == "sunthar" || u.invited_by == "dhanya" )
+      if (u.invited_to_ceremony && u.invited_to_ceremony == 1) && (u.invited_by == "Sunthar" || u.invited_by == "sunthar" )
         if u.rsvp_ca_reception == 1
-          @ca_reception_groom['yes'] += 1
+          @ca_reception_groom_sunthar['yes'] += 1
         elsif u.rsvp_ca_reception == 0
-          @ca_reception_groom['no'] += 1
+          @ca_reception_groom_sunthar['no'] += 1
         else
-          @ca_reception_groom['na'] += 1
+          @ca_reception_groom_sunthar['na'] += 1
+        end
+      end
+
+      if (u.invited_to_ceremony && u.invited_to_ceremony == 1) && (u.invited_by == "Dhanya" || u.invited_by == "dhanya" )
+        if u.rsvp_ca_reception == 1
+          @ca_reception_groom_dhanya['yes'] += 1
+        elsif u.rsvp_ca_reception == 0
+          @ca_reception_groom_dhanya['no'] += 1
+        else
+          @ca_reception_groom_dhanya['na'] += 1
         end
       end
     end
