@@ -195,6 +195,20 @@
       </table>
     </div>
     <div class="section">
+      <label class="checkbox-inline">
+        <input type="checkbox" class="invitee-checkbox" checked value="preeth">Preeth
+      </label>
+      <label class="checkbox-inline">
+        <input type="checkbox" class="invitee-checkbox" checked value="rashmi">Rashmi
+      </label>
+      <label class="checkbox-inline">
+        <input type="checkbox" class="invitee-checkbox" checked value="sunthar">Sunthar
+      </label>
+      <label class="checkbox-inline">
+        <input type="checkbox" class="invitee-checkbox" checked value="dhanya">Dhanya
+      </label>
+    </div>
+    <div class="section">
       <table class="table table-condensed table-bordered table-striped">
         <thead>
           <tr>
@@ -222,7 +236,7 @@
         </thead>
         <tbody id="user_table_body">
           <% @users.each do |user| %>
-          <tr>
+          <tr invitee='<%= user.invited_by %>' id="row_<%= user.id %>">
             <td><%= user.full_name %></td>
             <td><a href="http://www.preethandsunthar.com/rsvp?access_code=<%= user.access_code %>" target="_blank">RSVP link</a></td>
             <td><%= user.other_people.join(", ") %></td>
