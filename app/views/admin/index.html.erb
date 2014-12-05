@@ -296,6 +296,20 @@
       });
       return false;
     });
+    $(".invitee-checkbox").change(function() {
+      var invitee = $(this).val();
+      var isChecked = $(this).is(":checked");
+      console.log(invitee);
+      $("#user_table_body > tr").each(function(index, element) {
+        var rowInvitee = $(this).attr("invitee").toLowerCase().trim();
+        if (invitee == rowInvitee) {
+          if (isChecked)
+            $(this).show();
+          else
+            $(this).hide();
+        }
+      });
+    });
     // $("#export_data").click(function() {
     //   $.ajax({
     //     url: '/admin/splash/export',
