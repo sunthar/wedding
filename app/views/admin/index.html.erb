@@ -24,6 +24,9 @@
       <li class="navbar-actions" style="display: none">
         <a class="btn btn-warning" href="/admin/splash/export" target="_blank">Export Data</a>
       </li>
+      <li class="navbar-actions">
+        <a class="btn btn-warning print_label_button">Show Printable Labels</a>
+      </li>
     </ul>
   </nav>
 </header>
@@ -263,7 +266,7 @@
       </table>
     </div>
   </div>
-  <div class="mailing_labels_wrapper clearfix">
+  <div class="mailing_labels_wrapper clearfix" style="display: none;">
     <% @users.each do |user| %>
     <div class="mailing_label">
       <div class="mailing_label_name">
@@ -324,6 +327,10 @@
             $(this).hide();
         }
       });
+    });
+    $(".print_label_button").click(function(){
+      $('#invitee_list').hide();
+      $('.mailing_labels_wrapper').show();
     });
     // $("#export_data").click(function() {
     //   $.ajax({
