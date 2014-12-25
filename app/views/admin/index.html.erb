@@ -263,6 +263,21 @@
       </table>
     </div>
   </div>
+  <div class="mailing_labels_wrapper clearfix">
+    <% @users.each do |user| %>
+    <div class="mailing_label">
+      <div class="mailing_label_name">
+        <%= user.full_name %>
+      </div>
+      <div class="mailing_label_other">
+        <%= user.street_address %>
+      </div>
+      <div class="mailing_label_other">
+        <%= user.city %>, <%= user.state %> <%= user.zip %>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>
 <script type="text/javascript">
   var fields = ["first_name", "last_name", "full_name", "salutation", "email", "access_code", "phone", "street_address", "city", "state", "zip", "other_people", "invited_to_ceremony", "invited_to_reception", "invited_to_ca_reception", "invited_by", "invitee_batch_a", "invitee_batch_b", "rsvp_ceremony", "rsvp_reception", "rsvp_ca_reception", "rsvp_sent", "reminder_sent", "wedding_info_sent", "table_number", "save_date_sent", "physical_invitation_sent"];
