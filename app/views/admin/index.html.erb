@@ -268,17 +268,19 @@
   </div>
   <div class="mailing_labels_wrapper clearfix" style="display: none;">
     <% @users.each do |user| %>
-    <div class="mailing_label">
-      <div class="mailing_label_name">
-        <%= user.full_name %>
-      </div>
-      <div class="mailing_label_other">
-        <%= user.street_address %>
-      </div>
-      <div class="mailing_label_other">
-        <%= user.city %>, <%= user.state %> <%= user.zip %>
-      </div>
-    </div>
+      <% if user.street_address? %>
+        <div class="mailing_label">
+          <div class="mailing_label_name">
+            <%= user.full_name %>
+          </div>
+          <div class="mailing_label_other">
+            <%= user.street_address %>
+          </div>
+          <div class="mailing_label_other">
+            <%= user.city %>, <%= user.state %> <%= user.zip %>
+          </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
