@@ -268,7 +268,7 @@
   </div>
   <div class="mailing_labels_wrapper clearfix" style="display: none;">
     <% @users.each do |user| %>
-      <% if !(user.street_address == 'a' || user.street_address == '' || user.city == '' || user.zip == '')  %>
+      <% if user.street_address != nil && user.city != nil && user.zip != nil  %>
         <div class="mailing_label">
           <div class="mailing_label_name">
             <%= user.full_name %>
