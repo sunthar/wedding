@@ -294,7 +294,7 @@ class Admin::SplashController < AdminController
   def tablenumbers
     @tables = {}
     User.all.each do |u|
-      tn = u.table_number || "none"
+      tn = u.table_number.blank? ? "none" : u.table_number
       @tables[tn] ||= []
       @tables[tn].push(u)
     end
