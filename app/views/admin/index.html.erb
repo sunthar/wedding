@@ -24,6 +24,9 @@
       <li class="navbar-actions" style="display: none">
         <a class="btn btn-warning" href="/admin/splash/export" target="_blank">Export Data</a>
       </li>
+      <li class="navbar-actions">
+        <a class="btn btn-warning print_label_button">Show Printable Labels</a>
+      </li>
     </ul>
   </nav>
 </header>
@@ -263,6 +266,23 @@
       </table>
     </div>
   </div>
+  <div class="mailing_labels_wrapper clearfix" style="display: none;">
+    <% @users.each do |user| %>
+      <% if user.street_address != nil && user.city != nil && user.zip != nil  %>
+        <div class="mailing_label">
+          <div class="mailing_label_name">
+            <%= user.full_name %>
+          </div>
+          <div class="mailing_label_other">
+            <%= user.street_address %>
+          </div>
+          <div class="mailing_label_other">
+            <%= user.city %>, <%= user.state %> <%= user.zip %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
 <script type="text/javascript">
   var fields = ["first_name", "last_name", "full_name", "salutation", "email", "access_code", "phone", "street_address", "city", "state", "zip", "other_people", "invited_to_ceremony", "invited_to_reception", "invited_to_ca_reception", "invited_by", "invitee_batch_a", "invitee_batch_b", "rsvp_ceremony", "rsvp_reception", "rsvp_ca_reception", "rsvp_sent", "reminder_sent", "wedding_info_sent", "table_number", "save_date_sent", "physical_invitation_sent"];
@@ -332,6 +352,10 @@
       $(this).siblings().first().html($(this).val());
       $(this).hide();
       $(this).siblings().first().show();
+    });
+    $(".print_label_button").click(function(){
+      $('#invitee_list').hide();
+      $('.mailing_labels_wrapper').show();
     });
     // $("#export_data").click(function() {
     //   $.ajax({

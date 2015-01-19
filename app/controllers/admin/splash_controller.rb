@@ -190,7 +190,7 @@ class Admin::SplashController < AdminController
       end
 
 
-      if u.invited_to_ceremony && u.invited_to_ceremony == 1
+      if u.invited_to_ca_reception && u.invited_to_ca_reception == 1
         if u.rsvp_ca_reception == 1
           @ca_reception['yes'] += 1
         elsif u.rsvp_ca_reception == 0
@@ -201,7 +201,7 @@ class Admin::SplashController < AdminController
       end
 
       #Bride stuff
-      if (u.invited_to_ceremony && u.invited_to_ceremony == 1) && (u.invited_by == "Preeth" || u.invited_by == "preeth"  )
+      if (u.invited_to_ca_reception && u.invited_to_ca_reception == 1) && (u.invited_by == "Preeth" || u.invited_by == "preeth"  )
         if u.rsvp_ca_reception == 1
           @ca_reception_bride_preeth['yes'] += 1
         elsif u.rsvp_ca_reception == 0
@@ -211,7 +211,7 @@ class Admin::SplashController < AdminController
         end
       end
 
-      if (u.invited_to_ceremony && u.invited_to_ceremony == 1) && (u.invited_by == "Rashmi" || u.invited_by == "rashmi"  )
+      if (u.invited_to_ca_reception && u.invited_to_ca_reception == 1) && (u.invited_by == "Rashmi" || u.invited_by == "rashmi"  )
         if u.rsvp_ca_reception == 1
           @ca_reception_bride_rashmi['yes'] += 1
         elsif u.rsvp_ca_reception == 0
@@ -222,7 +222,7 @@ class Admin::SplashController < AdminController
       end
 
       #Groom stuff
-      if (u.invited_to_ceremony && u.invited_to_ceremony == 1) && (u.invited_by == "Sunthar" || u.invited_by == "sunthar" )
+      if (u.invited_to_ca_reception && u.invited_to_ca_reception == 1) && (u.invited_by == "Sunthar" || u.invited_by == "sunthar" )
         if u.rsvp_ca_reception == 1
           @ca_reception_groom_sunthar['yes'] += 1
         elsif u.rsvp_ca_reception == 0
@@ -232,7 +232,7 @@ class Admin::SplashController < AdminController
         end
       end
 
-      if (u.invited_to_ceremony && u.invited_to_ceremony == 1) && (u.invited_by == "Dhanya" || u.invited_by == "dhanya" )
+      if (u.invited_to_ca_reception && u.invited_to_ca_reception == 1) && (u.invited_by == "Dhanya" || u.invited_by == "dhanya" )
         if u.rsvp_ca_reception == 1
           @ca_reception_groom_dhanya['yes'] += 1
         elsif u.rsvp_ca_reception == 0
