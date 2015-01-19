@@ -291,4 +291,13 @@ class Admin::SplashController < AdminController
     send_data(csv, :type => 'text/csv', :disposition => "attachment; filename=#{filename}")
   end
 
+  def tablenumbers
+    @tables = {}
+    User.all.each do |u|
+      tn = u.table_number || "none"
+      @tables[tn] ||= []
+      @tables[tn].push(u)
+    end
+  end
+
 end

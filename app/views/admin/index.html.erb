@@ -254,7 +254,7 @@
             <td><%= user.city %></td>
             <td><%= user.state %></td>
             <td><%= user.zip %></td>
-            <td><%= user.table_number %></td>
+            <td class="table_number"><span class="num"><%= user.table_number %></span><input class="edit" type="text" style="display:none;width:50px;" id="edit_tn_<%= user.id %>" value="<%= user.table_number %>"/></td>
             <td><%= user.save_date_sent %></td>
             <td><%= user.physical_invitation_sent %></td>
           </tr>
@@ -309,6 +309,29 @@
             $(this).hide();
         }
       });
+    });
+    $(".table_number").click(function() {
+      $(this).find(".num").hide();
+      $(this).find(".edit").show();
+      $(this).find(".edit").focus();
+      $(this).find(".edit").select();
+    });
+    $(".table_number .edit").blur(function() {
+      var tn = $(this).val();
+      var uinfo = {
+        "id": $(this).attr("id").split("_")[2],
+        "info": {
+          "table_number": tn
+        }
+      };
+      PS.call("update_user", uinfo, function(data) {
+        alert("Updated user to table " + tn);
+      }, function(err) {
+        alert("Error: " + err);
+      });
+      $(this).siblings().first().html($(this).val());
+      $(this).hide();
+      $(this).siblings().first().show();
     });
     // $("#export_data").click(function() {
     //   $.ajax({

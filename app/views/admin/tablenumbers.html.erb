@@ -1,0 +1,52 @@
+
+<header class="navbar navbar-fixed-top navbar-inverse" id="top" role="banner">
+  <div class="navbar-header">
+    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a href="/admin" class="navbar-brand">
+      Wedding Admin Page
+    </a>
+  </div>
+</header>
+<div class="tab-content main_content">
+	<div class="form-group">
+		<label>
+			Show Table:
+			<select id="table_select">
+			  <option value="all">All</option>
+			  <% @tables.each do |num, users| %>
+			  <option value="<%=num%>"><%=num%></option>
+			  <% end %>
+			</select>
+		</label>
+	</div>
+	<div>
+		<% @tables.each do |num, users| %>
+		<div class="table_list col-md-2" id="table_<%=num%>">
+			<h4>Table <%= num %></h4>
+			<ul style="list-style: none;padding-left:0px;">
+				<% users.each do |u| %>
+				<li><%= u.full_name %></li>
+				<% end %>
+			</ul>
+		</div>
+		<% end %>
+	</div>
+</div>
+<script type="text/javascript">
+
+  $(document).ready(function() {
+  	$("#table_select").change(function() {
+  		var tn = $(this).val();
+  		if (tn == "all") {
+  			$(".table_list").show();
+  		} else {
+  			$(".table_list").hide();
+  			$("#table_" + tn).show();
+  		}
+  	});
+  });
+</script>

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   namespace :admin do
 
     match 'whoallarecoming' => 'splash#index', via: [:get]
+    match 'tablenumbers' => 'splash#tablenumbers', via: [:get]
     match 'splash/import' => 'splash#import', via: [:get]
     match 'splash/export' => 'splash#export', via: [:get]
     get '', to: redirect('')

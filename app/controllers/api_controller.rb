@@ -75,4 +75,25 @@ class ApiController < ApplicationController
     end
   end
 
+  def update_user
+    begin
+      u = User.find(params[:id])
+      info = params[:info]
+      if info['table_number']
+        u.update({:table_number => info['table_number']})
+      end
+      @result = "OK"
+    rescue Exception => e
+      @error = e.message
+    end
+    respond_to do |format|
+      format.json {
+        render json: {
+          "result" => @result,
+          "error" => @error
+        },
+        status: :ok
+      }
+    end
+  end
 end
