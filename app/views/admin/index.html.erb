@@ -215,6 +215,7 @@
       <table class="table table-condensed table-bordered table-striped">
         <thead>
           <tr>
+            <th>table_number</th>
             <th>full_name</th>
             <th>RSVP Link</th>
             <th>Others</th>
@@ -232,14 +233,12 @@
             <th>city</th>
             <th>state</th>
             <th>zip</th>
-            <th>table_number</th>
-            <th>save_date_sent</th>
-            <th>physical_invitation_sent</th>
           </tr>
         </thead>
         <tbody id="user_table_body">
           <% @users.each do |user| %>
           <tr invitee='<%= user.invited_by %>' id="row_<%= user.id %>">
+            <td class="table_number"><span class="num"><%= user.table_number %></span><input class="edit" type="text" style="display:none;width:50px;" id="edit_tn_<%= user.id %>" value="<%= user.table_number %>"/></td>
             <td><%= user.full_name %></td>
             <td><a href="http://www.preethandsunthar.com/rsvp?access_code=<%= user.access_code %>" target="_blank">RSVP link</a></td>
             <td><%= user.other_people.join(", ") %></td>
@@ -257,9 +256,6 @@
             <td><%= user.city %></td>
             <td><%= user.state %></td>
             <td><%= user.zip %></td>
-            <td class="table_number"><span class="num"><%= user.table_number %></span><input class="edit" type="text" style="display:none;width:50px;" id="edit_tn_<%= user.id %>" value="<%= user.table_number %>"/></td>
-            <td><%= user.save_date_sent %></td>
-            <td><%= user.physical_invitation_sent %></td>
           </tr>
           <% end %>
         </tbody>

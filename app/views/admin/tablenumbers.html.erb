@@ -24,27 +24,31 @@
 		</label>
 	</div>
 	<div>
-		<% @tables.each do |num, users| %>
-		<% next if num == "none" %>
-		<div class="table_list col-md-2" id="table_<%=num%>">
-			<h4>Table <%= num %></h4>
-			<ul style="list-style: none;padding-left:0px;">
-				<% users.each do |u| %>
-				<li><%= u.full_name %></li>
-				<% end %>
-			</ul>
-		</div>
-		<% end %>
-		<% if @tables['none'] %>
-		<div class="table_list col-md-2" id="table_none">
-			<h4>No table</h4>
-			<ul style="list-style: none;padding-left:0px;">
-				<% @tables['none'].each do |u| %>
-				<li><%= u.full_name %></li>
-				<% end %>
-			</ul>
-		</div>
-		<% end %>
+    <div class="row">
+      <% @tables.each do |num, users| %>
+      <% next if num == "none" %>
+      <div class="table_list col-md-2" id="table_<%=num%>">
+        <h4>Table <%= num %></h4>
+        <ul style="list-style: none;padding-left:0px;">
+          <% users.each do |u| %>
+          <li><%= u.full_name %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+    </div>
+    <div class="row">
+      <% if @tables['none'] %>
+      <div class="table_list col-md-12" id="table_none">
+        <h4>No table</h4>
+        <ul style="list-style: none;padding-left:0px;">
+          <% @tables['none'].each do |u| %>
+          <li><%= u.full_name %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+    </div>
 	</div>
 </div>
 <script type="text/javascript">
