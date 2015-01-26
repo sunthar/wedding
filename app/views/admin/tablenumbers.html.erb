@@ -1,4 +1,9 @@
-
+<style>
+  .table_list{
+    height: 250px;
+    margin-bottom: 20px;
+  }
+</style>
 <header class="navbar navbar-fixed-top navbar-inverse" id="top" role="banner">
   <div class="navbar-header">
     <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
@@ -29,11 +34,11 @@
       <% next if num == "none" %>
       <div class="table_list col-md-2" id="table_<%=num%>">
         <h4>Table <%= num %></h4>
-        <ul style="list-style: none;padding-left:0px;">
+        <ol>
           <% users.each do |u| %>
           <li><%= u.full_name %></li>
           <% end %>
-        </ul>
+        </ol>
       </div>
       <% end %>
     </div>
@@ -41,11 +46,11 @@
       <% if @tables['none'] %>
       <div class="table_list col-md-12" id="table_none">
         <h4>No table</h4>
-        <ul style="list-style: none;padding-left:0px;">
+        <ol>
           <% @tables['none'].each do |u| %>
           <li><%= u.full_name %></li>
           <% end %>
-        </ul>
+        </ol>
       </div>
       <% end %>
     </div>
