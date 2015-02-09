@@ -48,7 +48,9 @@
         <h4>No table</h4>
         <ol>
           <% @tables['none'].each do |u| %>
-          <li><%= u.full_name %></li>
+            <% next if u.rsvp_reception != "1" %>
+              <li><%= u.full_name %></li>
+            <% end %>
           <% end %>
         </ol>
       </div>
