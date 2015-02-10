@@ -292,12 +292,52 @@ class Admin::SplashController < AdminController
   end
 
   def tablenumbers
+    puts "TABLENUMBERS"
     @tables = {}
     User.all.each do |u|
+      next unless u['rsvp_reception'] && u['rsvp_reception'] == 1
       tn = u.table_number.blank? ? "none" : u.table_number
       @tables[tn] ||= []
       @tables[tn].push(u)
     end
+    tableArray = []
+    @tables.each{|tn, users| tableArray.push({"number" => tn, "users" => users})}
+    puts tableArray.collect{|t| t["number"]}.join(", ")
+    tableArray.sort! do |t1, t2|
+      t1name = t1["number"]
+      t2name = t2["number"]
+      case
+      when t1name.downcase == "head"
+        -1
+      when t1name == "none"
+        1
+      when t2name.downcase == "head"
+        1
+      when t2name == "none"
+        -1
+      else
+        t1name.to_i <=> t2name.to_i
+      end
+    end
+    puts tableArray.collect{|t| t["number"]}.join(", ")
+    @tables = tableArray
+    # sorted_tables = sort_tables(tableArray)
+  end
+
+  private
+
+
+
+  def sort_tables(tables)
+    return tables.sort{|t1, t2|
+      t1name = t1["number"]
+      t2name = t2["number"]
+      -1 if t1name.downcase == "head"
+      1 if t1name == "none"
+      1 if t2name.downcase == "head"
+      -1 if t2name == "none"
+      t1name.to_i <=> t2name.to_i
+    }
   end
 
 end

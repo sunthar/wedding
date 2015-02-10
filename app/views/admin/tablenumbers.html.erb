@@ -20,7 +20,7 @@
   </div>
 </header>
 <div class="tab-content main_content">
-	<div class="form-group">
+	<div class="form-group" style="display:none;">
 		<label>
 			Show Table:
 			<select id="table_select">
@@ -33,8 +33,8 @@
 	</div>
 	<div>
     <div class="row">
-      <% @tables.each do |num, users| %>
-      <% next if num == "none" %>
+      <% @tables.each do |table| %>
+      <% num = table["number"].to_s; users = table["users"] %>
       <div class="table_list col-md-2" id="table_<%=num%>">
         <h4>Table <%= num %></h4>
         <ol>
@@ -45,20 +45,7 @@
       </div>
       <% end %>
     </div>
-    <div class="row">
-      <% if @tables['none'] %>
-      <div class="table_list col-md-12" id="table_none">
-        <h4>No table</h4>
-        <ol>
-          <% @tables['none'].each do |u| %>
-            <% if u.rsvp_reception == 1 %>
-              <li><%= u.full_name %></li>
-            <% end %>
-          <% end %>
-        </ol>
-      </div>
-      <% end %>
-    </div>
+
 	</div>
 </div>
 <script type="text/javascript">
