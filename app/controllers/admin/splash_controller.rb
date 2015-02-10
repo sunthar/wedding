@@ -295,6 +295,7 @@ class Admin::SplashController < AdminController
     puts "TABLENUMBERS"
     @tables = {}
     User.all.each do |u|
+      next unless u['rsvp_reception'] && u['rsvp_reception'] == 1
       tn = u.table_number.blank? ? "none" : u.table_number
       @tables[tn] ||= []
       @tables[tn].push(u)
