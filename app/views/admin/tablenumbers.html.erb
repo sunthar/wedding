@@ -36,7 +36,8 @@
       <% @tables.each do |table| %>
       <% num = table["number"].to_s; users = table["users"] %>
       <div class="table_list col-md-2" id="table_<%=num%>">
-        <h4>Table <%= num %></h4>
+        <div class="tn display" num="<%= num %>"><h4 style="display:inline-block;">Table <%= num %></h4><span>&nbsp;<a href="#" class="edit_table">edit</a></div>
+        <div class="tn edit" style="display:none;"><h4 style="display:inline-block;">Table&nbsp;</h4><input style="width:40px;display:inline-block;" value="<%= num %>" \><span>&nbsp;<a href="#" class="save_table">save</a></div>
         <ol>
           <% users.each do |u| %>
           <li><%= u.full_name %></li>
@@ -60,5 +61,19 @@
   			$("#table_" + tn).show();
   		}
   	});
+    $(".edit_table").click(function(e) {
+      e.preventDefault();
+      $(this).closest(".tn.display").hide();
+      $(this).closest(".tn.display").siblings(".tn.edit").show();
+    });
+    $(".save_table").click(function(e) {
+      var oldtn = $(this).closest(".tn.edit").siblings(".tn.display").attr("num");
+      var newtn = $(this).closest(".tn.edit").find("input").val();
+      PS.call("update_tables", {"oldtn": oldtn, "newtn": newtn}, function(data) {
+        location.reload();
+      }, function(err) {
+        alert("Error: " + err);
+      });
+    });
   });
 </script>

@@ -96,4 +96,26 @@ class ApiController < ApplicationController
       }
     end
   end
+
+  def update_tables
+    begin
+      oldtn = params[:oldtn]
+      newtn = params[:newtn]
+      num = User.where(:table_number => newtn).count
+      raise "Table already exists" if num > 0
+      User.where(:table_number => oldtn).each{|u| u.update(:table_number => newtn)}
+      @result = "OK"
+    rescue Exception => e
+      @error = e.message
+    end
+    respond_to do |format|
+      format.json {
+        render json: {
+          "result" => @result,
+          "error" => @error
+        },
+        status: :ok
+      }
+    end
+  end
 end
