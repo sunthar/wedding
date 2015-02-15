@@ -228,11 +228,14 @@
             <th>invited_to_ca_reception</th>
             <th>email</th>
             <th>access_code</th>
+            <!--
             <th>phone</th>
             <th>street_address</th>
             <th>city</th>
             <th>state</th>
             <th>zip</th>
+          -->
+            <th>Note</th>
           </tr>
         </thead>
         <tbody id="user_table_body">
@@ -251,11 +254,14 @@
             <td><%= user.invited_to_ca_reception %></td>
             <td><%= user.email %></td>
             <td><%= user.access_code %></td>
+            <!--
             <td><%= user.phone %></td>
             <td><%= user.street_address %></td>
             <td><%= user.city %></td>
             <td><%= user.state %></td>
             <td><%= user.zip %></td>
+          -->
+            <td><%= user.rsvp_note %></td>
           </tr>
           <% end %>
         </tbody>
