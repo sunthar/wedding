@@ -217,6 +217,7 @@
           <tr>
             <th>table_number</th>
             <th>full_name</th>
+            <th>phone</th>
             <th>RSVP Link</th>
             <th>Others</th>
             <th>Ceremony</th>
@@ -243,6 +244,7 @@
           <tr invitee='<%= user.invited_by %>' id="row_<%= user.id %>">
             <td class="table_number"><span class="num"><%= user.table_number %></span><input class="edit" type="text" style="display:none;width:50px;" id="edit_tn_<%= user.id %>" value="<%= user.table_number %>"/></td>
             <td><%= user.full_name %></td>
+            <td><%= user.phone %></td>
             <td><a href="http://www.preethandsunthar.com/rsvp?access_code=<%= user.access_code %>" target="_blank">RSVP link</a></td>
             <td><%= user.other_people.join(", ") %></td>
             <td><%= user.rsvp_ceremony %></td>
